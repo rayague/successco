@@ -1,0 +1,7 @@
+.partner-image {
+  width: 64px; /* Taille fixe pour la largeur */
+  height: 64px; /* Taille fixe pour la hauteur */
+  object-fit: contain; /* Ajuste l'image sans la déformer */
+  border-radius: 8px; /* Optionnel : coins arrondis */
+  background-color: white; /* Optionnel : fond pour une meilleure visibilité */
+}

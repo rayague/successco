@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>SuccèsSco</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  </head>
+  <body class="bg-yellow-100" style="font-family: 'Ubuntu', sans-serif">
+    <!-- Header Section -->
+    <header
+      class="bg-white w-full relative py-1 pl-2 top-0 left-0 shadow-lg z-50"
+    >
+      <h3
+        class="text-black font-semibold text-md lg:text-2xl md:text-xl sm:text-md lg:font-semibold"
+      >
+        Ecole le Revelateur secondaire
+      </h3>
+    </header>
+    <img
+      src="../assets/images/ecoleChoisie/bg.png"
+      class="items-center h-screen fixed -z-30 top-0 left-0 justify-items-center opacity-30"
+      alt=""
+    />
+
+    <div class="relative w-full">
+      <div
+        class="top-4 items-center justify-items-center w-full mx-auto left-50"
+      >
+        <img
+          src="../assets/images/ecoleChoisie/image1.png"
+          class="w-60"
+          alt=""
+        />
+        <h3 class="text-center text-sky-700 font-bold text-2xl my-1">
+          Le Revelateur secondaire
+        </h3>
+        <h3 class="font-semibold text-sm my-1">
+          Bienvenu(e) Parent LENOIR Cyrille
+        </h3>
+      </div>
+    </div>
+    <div class="bg-yellow-500 rounded-2xl w-1/2 mx-auto py-2">
+      <!-- Inner Container 1 -->
+      <form
+        action="../dashboard/parents/parent.html"
+        method="POST"
+        class="flex flex-col gap-2 w-full mx-auto my-4"
+      >
+        <div class="relative mx-auto w-2/3">
+          <i
+            class="fa fa-building absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+          ></i>
+          <select
+            name="enfant"
+            required
+            class="pl-10 border border-gray-300 text-center rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+          >
+            <option value="" disabled selected>
+              -- Choisissez votre enfant --
+            </option>
+            <option value="LENOIR Cyrille">LENOIR Cyrille</option>
+            <option value="AMOUSSOU Roger">AMOUSSOU Roger</option>
+            <option value="DEGLA Jean">DEGLA Jean</option>
+            <option value="EKPE Marie">EKPE Marie</option>
+          </select>
+        </div>
+
+        <!-- Inner Container 2 -->
+        <div class="w-2/3 mx-auto bg-yellow-500 rounded-2xl">
+          <div
+            class="w-full border-b-2 py-3 items-center justify-items-center rounded-t-2xl"
+          >
+            <h3 class="text-center font-bold">Enfant choisi</h3>
+          </div>
+          <div class="w-full py-3">
+            <h3 class="text-center my-4 font-bold text-slate-900">
+              <span class="text-white">LENOIR Cyrille</span>
+              <span class="text-black">
+                / Forfait valide jusqu'au 31/12/2024 à 13h:34mn</span
+              >
+            </h3>
+          </div>
+        </div>
+
+        <!-- Inner Container 3 -->
+        <button
+          type="submit"
+          class="w-2/3 mx-auto my-2 border border-gray-300 rounded-lg p-2 text-center bg-sky-700 text-white font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          Connexion parent
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
