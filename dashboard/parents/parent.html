@@ -29,6 +29,22 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <style>
+      /* Ajoute une animation pour afficher la modale */
+      #settings-modal.show {
+        display: flex;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
   </head>
   <body
     class="container-fluid bg-yellow-100"
@@ -44,15 +60,35 @@
     </header>
     <header class="w-full bg-sky-700 py-1 top-0 left-0 shadow-lg z-50">
       <div class="max-w-7xl mx-auto flex items-center justify-between px-4">
-        <i class="fa fa-bars text-white cursor-pointer" id="menu-btn"></i>
+        <!-- <i class="fa fa-bars text-white/50 cursor-pointer"></i> -->
+        <img
+          src="../../assets/images/tableauDeBoard/navig4.png
+      "
+          class="w-5 mx-3 cursor-pointer"
+          alt=""
+          id="menu-btn"
+        />
         <h3 class="text-md text-white font-bold">SuccesSco Benin</h3>
-        <div class="">
-          <i class="fa fa-search text-white mx-3 cursor-pointer"></i>
-          <i class="fa fa-bell text-white mx-3 cursor-pointer"></i>
-          <i
-            class="fa fa-gear text-white mx-3 cursor-pointer"
+        <div class="flex flex-row">
+          <img
+            src="../../assets/images/tableauDeBoard/navig3.png
+          "
+            class="w-5 mx-3 cursor-pointer"
+            alt=""
+          />
+          <img
+            src="../../assets/images/tableauDeBoard/navig2.png
+        "
+            class="w-5 mx-3 cursor-pointer"
+            alt=""
+          />
+          <img
+            src="../../assets/images/tableauDeBoard/navig1.png
+      "
+            class="w-5 mx-3 cursor-pointer"
+            alt=""
             id="setting-btn"
-          ></i>
+          />
         </div>
       </div>
     </header>
@@ -214,8 +250,43 @@
       </div>
     </div>
 
-    <!-- Fenêtre latérale -->
+    <!-- Fenêtre modale -->
     <div
+      id="settings-modal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
+        <h2 class="text-lg font-bold mb-4">Paramètres</h2>
+        <p class="mb-4">Modifiez vos paramètres ici.</p>
+
+        <!-- Bouton Voir le Profil -->
+        <button
+          id="profile-btn"
+          class="block w-full mb-3 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        >
+          Voir le Profil
+        </button>
+
+        <!-- Bouton Déconnexion -->
+        <button
+          id="logout-btn"
+          class="block w-full mb-3 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+        >
+          Déconnexion
+        </button>
+
+        <!-- Bouton Fermer -->
+        <button
+          id="close-btn"
+          class="block w-full bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+        >
+          Fermer
+        </button>
+      </div>
+    </div>
+
+    <!-- Fenêtre latérale -->
+    <!-- <div
       id="settingbar"
       class="absolute top-0 right-0 w-64 h-auto bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-40 rounded-2xl"
     >
@@ -248,7 +319,7 @@
           </li>
         </ul>
       </div>
-    </div>
+    </div> -->
     <header class="w-full bg-white py-1 top-0 left-0 shadow-lg z-50">
       <div
         class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2"
@@ -520,25 +591,30 @@
         }
       });
 
-      const settingBtn = document.getElementById("setting-btn");
-      const settingbar = document.getElementById("settingbar");
+      document.addEventListener("DOMContentLoaded", () => {
+        const settingBtn = document.getElementById("setting-btn");
+        const settingsModal = document.getElementById("settings-modal");
+        const closeBtn = document.getElementById("close-btn");
 
-      // Toggle sidebar visibility
-      settingBtn.addEventListener("click", () => {
-        settingbar.classList.toggle("translate-x-full");
-        document.body.classList.toggle("overlay-active"); // Add class to detect if the overlay should be active
-      });
+        // Ouvrir la fenêtre modale
+        settingBtn.addEventListener("click", () => {
+          settingsModal.classList.remove("hidden");
+          settingsModal.classList.add("show");
+        });
 
-      // Close sidebar when clicking outside
-      document.addEventListener("click", (event) => {
-        if (
-          !settingbar.contains(event.target) && // Click is outside the sidebar
-          !settingBtn.contains(event.target) && // Click is not on the button
-          !settingbar.classList.contains("-translate-x-full") // Sidebar is open
-        ) {
-          settingbar.classList.add("-translate-x-full");
-          document.body.classList.remove("overlay-active");
-        }
+        // Fermer la fenêtre modale
+        closeBtn.addEventListener("click", () => {
+          settingsModal.classList.add("hidden");
+          settingsModal.classList.remove("show");
+        });
+
+        // Fermer la modale en cliquant en dehors de son contenu
+        settingsModal.addEventListener("click", (event) => {
+          if (event.target === settingsModal) {
+            settingsModal.classList.add("hidden");
+            settingsModal.classList.remove("show");
+          }
+        });
       });
     </script>
   </body>
