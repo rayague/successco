@@ -98,6 +98,68 @@
       alt=""
     />
 
+    <!-- Fenêtre modale pour le choix de langue -->
+    <div
+      id="language-modal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
+        <h2 class="text-lg font-bold mb-4">Choisir une langue</h2>
+
+        <!-- Formulaire pour le choix de la langue -->
+        <form id="language-form" method="POST" action="">
+          <!-- Champs caché pour stocker la langue sélectionnée -->
+          <input type="hidden" name="selectedLanguage" id="selectedLanguage" />
+
+          <!-- Boutons de langue -->
+          <button
+            type="button"
+            class="block w-full mb-3 font-semibold px-4 py-2 rounded hover:bg-sky-200"
+          >
+            Français
+          </button>
+          <button
+            type="submit"
+            class="block w-full mb-3 font-semibold px-4 py-2 rounded hover:bg-sky-200"
+          >
+            Anglais
+          </button>
+          <button
+            type="submit"
+            class="block w-full mb-3 font-semibold px-4 py-2 rounded hover:bg-sky-200"
+          >
+            Fon
+          </button>
+          <button
+            type="submit"
+            class="block w-full mb-3 font-semibold px-4 py-2 rounded hover:bg-sky-200"
+          >
+            Idaasha
+          </button>
+          <button
+            type="submit"
+            class="block w-full mb-3 font-semibold px-4 py-2 rounded hover:bg-sky-200"
+          >
+            Mina
+          </button>
+          <button
+            type="submit"
+            class="block w-full mb-3 font-semibold px-4 py-2 rounded hover:bg-sky-200"
+          >
+            Yoruba
+          </button>
+        </form>
+
+        <!-- Bouton pour fermer la fenêtre -->
+        <button
+          id="close-language-btn"
+          class="block w-full bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+        >
+          Fermer
+        </button>
+      </div>
+    </div>
+
     <!-- Fenêtre latérale -->
     <div
       id="sidebar"
@@ -107,7 +169,8 @@
         <h3 class="text-lg font-bold mb-4">Menu</h3>
         <ul class="space-y-4">
           <li
-            class="flex items-center text-blue-700 hover:text-blue-900 cursor-pointer"
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+            id="language-btn"
           >
             <a href="" class="w-full justify-between flex flex-row">
               Langue
@@ -118,12 +181,12 @@
             /></a>
           </li>
           <li
-            class="flex items-center text-blue-700 hover:text-blue-900 cursor-pointer"
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
           >
             <a href="" class="w-full justify-between flex flex-row">
               Tableau de bord
               <img
-                src="../../assets/images/tableauDeBoard/button11.png"
+                src="../../assets/images/tableauDeBoard/button8.png"
                 alt=""
                 class="w-4"
               />
@@ -131,12 +194,12 @@
           </li>
 
           <li
-            class="flex items-center text-blue-700 hover:text-blue-900 cursor-pointer"
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
           >
             <a href="" class="w-full justify-between flex flex-row">
               Notes
               <img
-                src="../../assets/images/tableauDeBoard/button11.png"
+                src="../../assets/images/tableauDeBoard/button5.png"
                 alt=""
                 class="w-4"
               />
@@ -144,12 +207,12 @@
           </li>
 
           <li
-            class="flex items-center text-blue-700 hover:text-blue-900 cursor-pointer"
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
           >
             <a href="" class="w-full justify-between flex flex-row">
               Votre solde
               <img
-                src="../../assets/images/tableauDeBoard/button11.png"
+                src="../../assets/images/tableauDeBoard/button6.png"
                 alt=""
                 class="w-4"
               />
@@ -157,12 +220,12 @@
           </li>
 
           <li
-            class="flex items-center text-blue-700 hover:text-blue-900 cursor-pointer"
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
           >
             <a href="" class="w-full justify-between flex flex-row">
               Absences
               <img
-                src="../../assets/images/tableauDeBoard/button11.png"
+                src="../../assets/images/tableauDeBoard/button7.png"
                 alt=""
                 class="w-4"
               />
@@ -170,12 +233,12 @@
           </li>
 
           <li
-            class="flex items-center text-blue-700 hover:text-blue-900 cursor-pointer"
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
           >
             <a href="" class="w-full justify-between flex flex-row">
               Exercices de maison
               <img
-                src="../../assets/images/tableauDeBoard/button11.png"
+                src="../../assets/images/tableauDeBoard/button3.png"
                 alt=""
                 class="w-4"
               />
@@ -183,12 +246,12 @@
           </li>
 
           <li
-            class="flex items-center text-blue-700 hover:text-blue-900 cursor-pointer"
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
           >
             <a href="" class="w-full justify-between flex flex-row">
               Conduite
               <img
-                src="../../assets/images/tableauDeBoard/button11.png"
+                src="../../assets/images/tableauDeBoard/button4.png"
                 alt=""
                 class="w-4"
               />
@@ -196,12 +259,12 @@
           </li>
 
           <li
-            class="flex items-center text-blue-700 hover:text-blue-900 cursor-pointer"
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
           >
             <a href="" class="w-full justify-between flex flex-row">
               Messagerie
               <img
-                src="../../assets/images/tableauDeBoard/button11.png"
+                src="../../assets/images/tableauDeBoard/button2.png"
                 alt=""
                 class="w-4"
               />
@@ -209,12 +272,12 @@
           </li>
 
           <li
-            class="flex items-center text-blue-700 hover:text-blue-900 cursor-pointer"
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
           >
             <a href="" class="w-full justify-between flex flex-row">
               Contacts utiles
               <img
-                src="../../assets/images/tableauDeBoard/button11.png"
+                src="../../assets/images/tableauDeBoard/button1.png"
                 alt=""
                 class="w-4"
               />
@@ -222,12 +285,12 @@
           </li>
 
           <li
-            class="flex items-center text-blue-700 hover:text-blue-900 cursor-pointer"
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
           >
             <a href="" class="w-full justify-between flex flex-row">
               Niveau de programme
               <img
-                src="../../assets/images/tableauDeBoard/button11.png"
+                src="../../assets/images/tableauDeBoard/button13.png"
                 alt=""
                 class="w-4"
               />
@@ -235,12 +298,12 @@
           </li>
 
           <li
-            class="flex items-center text-blue-700 hover:text-blue-900 cursor-pointer"
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
           >
             <a href="" class="w-full justify-between flex flex-row">
               Rappel de vaccination
               <img
-                src="../../assets/images/tableauDeBoard/button11.png"
+                src="../../assets/images/tableauDeBoard/button12.png"
                 alt=""
                 class="w-4"
               />
@@ -613,6 +676,45 @@
           if (event.target === settingsModal) {
             settingsModal.classList.add("hidden");
             settingsModal.classList.remove("show");
+          }
+        });
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        const languageBtn = document.getElementById("language-btn");
+        const languageModal = document.getElementById("language-modal");
+        const closeLanguageBtn = document.getElementById("close-language-btn");
+        const frenchBtn = document.getElementById("french-btn");
+        const englishBtn = document.getElementById("english-btn");
+
+        // Ouvrir la fenêtre modale
+        languageBtn.addEventListener("click", (e) => {
+          e.preventDefault(); // Empêche le rechargement de la page
+          languageModal.classList.remove("hidden");
+          languageModal.classList.add("show");
+        });
+
+        // Fermer la fenêtre modale
+        closeLanguageBtn.addEventListener("click", () => {
+          languageModal.classList.add("hidden");
+          languageModal.classList.remove("show");
+        });
+
+        // Actions pour les boutons de langue
+        frenchBtn.addEventListener("click", () => {
+          alert("Langue sélectionnée : Français");
+          // Ajoutez ici votre logique pour appliquer le français
+        });
+
+        englishBtn.addEventListener("click", () => {
+          alert("Langue sélectionnée : Anglais");
+          // Ajoutez ici votre logique pour appliquer l'anglais
+        });
+
+        // Fermer la modale en cliquant en dehors de son contenu
+        languageModal.addEventListener("click", (event) => {
+          if (event.target === languageModal) {
+            languageModal.classList.add("hidden");
+            languageModal.classList.remove("show");
           }
         });
       });
