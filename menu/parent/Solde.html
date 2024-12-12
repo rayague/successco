@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
     <title>SuccèsSco</title>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -25,38 +28,543 @@
       href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <style>
+      /* Ajoute une animation pour afficher la modale */
+      #settings-modal.show {
+        display: flex;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <div class="container mx-auto">
-      <h1 class="text-3xl font-bold">Récapitulatif de votre solde</h1>
-      <table class="min-w-full border-collapse">
-        <thead>
+  <body
+    class="container-fluid bg-yellow-100"
+    style="font-family: 'Ubuntu', sans-serif"
+  >
+    <!-- Header Section -->
+    <header class="w-full py-2 bg-white pl-2 top-0 left-0 shadow-lg z-50">
+      <h3
+        class="text-black font-semibold text-md lg:text-2xl md:text-xl sm:text-md lg:font-semibold"
+      >
+        Solde
+      </h3>
+    </header>
+    <header class="w-full bg-sky-700 py-1 top-0 left-0 shadow-lg z-50">
+      <div class="max-w-7xl mx-auto flex items-center justify-between px-4">
+        <!-- <i class="fa fa-bars text-white/50 cursor-pointer"></i> -->
+        <img
+          src="../../assets/images/tableauDeBoard/navig4.png
+      "
+          class="w-5 mx-3 cursor-pointer"
+          alt=""
+          id="menu-btn"
+        />
+        <h3 class="text-md text-white font-bold">SuccesSco Benin</h3>
+        <div class="flex flex-row">
+          <img
+            src="../../assets/images/tableauDeBoard/navig3.png
+          "
+            class="w-6 mx-3 cursor-pointer"
+            alt=""
+          />
+          <img
+            src="../../assets/images/tableauDeBoard/navig2.png
+        "
+            class="w-5 mx-3 cursor-pointer"
+            alt=""
+          />
+          <img
+            src="../../assets/images/tableauDeBoard/navig1.png
+      "
+            class="w-5 mx-3 cursor-pointer"
+            alt=""
+            id="setting-btn"
+          />
+        </div>
+      </div>
+    </header>
+    <img
+      src="../../assets/images/ecoleChoisie/bg.png"
+      class="items-center h-screen fixed -z-30 top-0 left-0 justify-items-center opacity-30"
+      alt=""
+    />
+
+    <!-- Fenêtre modale pour le choix de langue -->
+    <div
+      id="language-modal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
+        <h2 class="text-lg font-bold mb-4">Choisir une langue</h2>
+
+        <!-- Formulaire pour le choix de la langue -->
+        <form id="language-form" method="POST" action="">
+          <!-- Champs caché pour stocker la langue sélectionnée -->
+          <input type="hidden" name="selectedLanguage" id="selectedLanguage" />
+
+          <!-- Boutons de langue -->
+          <button
+            type="button"
+            class="block w-full mb-3 font-semibold px-4 py-2 rounded hover:bg-sky-200"
+          >
+            Français
+          </button>
+          <button
+            type="submit"
+            class="block w-full mb-3 font-semibold px-4 py-2 rounded hover:bg-sky-200"
+          >
+            Anglais
+          </button>
+          <button
+            type="submit"
+            class="block w-full mb-3 font-semibold px-4 py-2 rounded hover:bg-sky-200"
+          >
+            Fon
+          </button>
+          <button
+            type="submit"
+            class="block w-full mb-3 font-semibold px-4 py-2 rounded hover:bg-sky-200"
+          >
+            Idaasha
+          </button>
+          <button
+            type="submit"
+            class="block w-full mb-3 font-semibold px-4 py-2 rounded hover:bg-sky-200"
+          >
+            Mina
+          </button>
+          <button
+            type="submit"
+            class="block w-full mb-3 font-semibold px-4 py-2 rounded hover:bg-sky-200"
+          >
+            Yoruba
+          </button>
+        </form>
+
+        <!-- Bouton pour fermer la fenêtre -->
+        <button
+          id="close-language-btn"
+          class="block w-full bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+        >
+          Fermer
+        </button>
+      </div>
+    </div>
+
+    <!-- Fenêtre latérale -->
+    <div
+      id="sidebar"
+      class="absolute top-0 left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-40 rounded-2xl"
+    >
+      <div class="p-4">
+        <h3 class="text-lg font-bold mb-4">Menu</h3>
+        <ul class="space-y-4">
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+            id="language-btn"
+          >
+            <a href="" class="w-full justify-between flex flex-row">
+              Langue
+              <img
+                src="../../assets/images/tableauDeBoard/button11.png"
+                alt=""
+                class="w-4"
+            /></a>
+          </li>
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a href="" class="w-full justify-between flex flex-row">
+              Tableau de bord
+              <img
+                src="../../assets/images/tableauDeBoard/button8.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a href="" class="w-full justify-between flex flex-row">
+              Notes
+              <img
+                src="../../assets/images/tableauDeBoard/button5.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a href="" class="w-full justify-between flex flex-row">
+              Votre solde
+              <img
+                src="../../assets/images/tableauDeBoard/button6.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a href="" class="w-full justify-between flex flex-row">
+              Absences
+              <img
+                src="../../assets/images/tableauDeBoard/button7.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a href="" class="w-full justify-between flex flex-row">
+              Exercices de maison
+              <img
+                src="../../assets/images/tableauDeBoard/button3.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a href="" class="w-full justify-between flex flex-row">
+              Conduite
+              <img
+                src="../../assets/images/tableauDeBoard/button4.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a href="" class="w-full justify-between flex flex-row">
+              Messagerie
+              <img
+                src="../../assets/images/tableauDeBoard/button2.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a href="" class="w-full justify-between flex flex-row">
+              Contacts utiles
+              <img
+                src="../../assets/images/tableauDeBoard/button1.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a href="" class="w-full justify-between flex flex-row">
+              Niveau de programme
+              <img
+                src="../../assets/images/tableauDeBoard/button13.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a href="" class="w-full justify-between flex flex-row">
+              Rappel de vaccination
+              <img
+                src="../../assets/images/tableauDeBoard/button12.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Fenêtre modale -->
+    <div
+      id="settings-modal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
+        <h2 class="text-lg font-bold mb-4">Paramètres</h2>
+        <p class="mb-4">Modifiez vos paramètres ici.</p>
+
+        <!-- Bouton Voir le Profil -->
+        <button
+          id="profile-btn"
+          class="block w-full mb-3 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        >
+          Voir le Profil
+        </button>
+
+        <!-- Bouton Déconnexion -->
+        <button
+          id="logout-btn"
+          class="block w-full mb-3 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+        >
+          Déconnexion
+        </button>
+
+        <!-- Bouton Fermer -->
+        <button
+          id="close-btn"
+          class="block w-full bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+        >
+          Fermer
+        </button>
+      </div>
+    </div>
+
+    <header class="w-full bg-white py-1 top-0 left-0 shadow-lg z-50">
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2"
+      >
+        <div class="flex flex-col md:flex-col lg:flex-row items-center">
+          <img
+            src="../../assets/images/tableauDeBoard/image3.png"
+            class="w-4"
+            alt=""
+          />
+          <h3 class="mx-3 text-sm font-semibold">LENOIR Bonheur</h3>
+        </div>
+        <h3 class="text-sky-700">Voir la liste de mes payements ></h3>
+      </div>
+    </header>
+
+    <div
+      class="w-full flex flex-row font-bold text-2xl items-center justify-center my-4"
+    >
+      <img src="../../assets/images/menu/solde.png" class="w-24 mx-3" alt="" />
+      <h3 class="mx-3">Récapitulatif de votre solde</h3>
+    </div>
+
+    <!-- Tableau -->
+    <div class="overflow-x-auto w-[95%] mx-auto">
+      <table class="table-auto w-full border-collapse border border-blue-200">
+        <!-- En-tête -->
+        <thead class="bg-sky-700 text-white">
           <tr>
-            <th class="px-6 py-4 bg-gray-100 text-left">Frais concernés</th>
-            <th class="px-6 py-4 bg-gray-100 text-right">Montant frais</th>
-            <th class="px-6 py-4 bg-gray-100 text-right">
+            <th class="px-4 py-4 border border-blue-200">Frais concernés</th>
+            <th class="px-4 py-4 border border-blue-200">Montant frais</th>
+            <th class="px-4 py-4 border border-blue-200">
               Règlement antérieurs
             </th>
-            <th class="px-6 py-4 bg-gray-100 text-right">Reste à payer</th>
-            <th class="px-6 py-4 bg-gray-100 text-center">Action</th>
+            <th class="px-4 py-4 border border-blue-200">Reste à payer</th>
+            <th class="px-4 py-4 border border-blue-200">Action</th>
           </tr>
         </thead>
+        <!-- Corps du Tableau -->
         <tbody>
-          <tr>
-            <td class="px-6 py-4 border-b">Frais de scolarité</td>
-            <td class="px-6 py-4 border-b text-right">75 000</td>
-            <td class="px-6 py-4 border-b text-right">5 000</td>
-            <td class="px-6 py-4 border-b text-right">10 000</td>
-            <td class="px-6 py-4 border-b text-center">
+          <!-- Ligne 1 -->
+          <tr class="bg-sky-100">
+            <td
+              class="px-4 py-2 border border-blue-200 text-white font-semibold bg-sky-700"
+            >
+              Frais de scolarité
+            </td>
+            <td class="px-4 py-4 border border-blue-200 text-center font-bold">
+              75 000
+            </td>
+            <td class="px-4 py-4 border border-blue-200 text-center font-bold">
+              5 000
+            </td>
+            <td class="px-4 py-4 border border-blue-200 text-center font-bold">
+              10 000
+            </td>
+            <td class="px-4 py-4 border border-blue-200 text-center">
               <button
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                class="bg-sky-700 text-white px-3 py-1 rounded shadow hover:bg-blue-700"
+              >
+                Payer par mobile
+              </button>
+            </td>
+          </tr>
+          <!-- Ligne 2 -->
+          <tr class="bg-sky-100">
+            <td
+              class="px-4 py-4 border border-blue-200 bg-sky-700 text-white font-semibold"
+            >
+              Frais de TD Février
+            </td>
+            <td class="px-4 py-4 border border-blue-200 text-center font-bold">
+              175 500
+            </td>
+            <td class="px-4 py-4 border border-blue-200 text-center font-bold">
+              6 000
+            </td>
+            <td class="px-4 py-4 border border-blue-200 text-center font-bold">
+              5 000
+            </td>
+            <td class="px-4 py-4 border border-blue-200 text-center">
+              <button
+                class="bg-sky-700 text-white px-3 py-1 rounded shadow hover:bg-blue-700"
+              >
+                Payer par mobile
+              </button>
+            </td>
+          </tr>
+          <!-- Ligne 3 -->
+          <tr class="bg-sky-100">
+            <td
+              class="px-4 py-4 border border-blue-200 bg-sky-700 text-white font-semibold"
+            >
+              Frais de cantine Février
+            </td>
+            <td class="px-4 py-4 border border-blue-200 text-center font-bold">
+              -100 500
+            </td>
+            <td class="px-4 py-4 border border-blue-200 text-center font-bold">
+              -1 000
+            </td>
+            <td class="px-4 py-4 border border-blue-200 text-center font-bold">
+              5 000
+            </td>
+            <td class="px-4 py-4 border border-blue-200 text-center">
+              <button
+                class="bg-sky-700 text-white px-3 py-1 rounded shadow hover:bg-blue-700"
               >
                 Payer par mobile
               </button>
             </td>
           </tr>
         </tbody>
+        <!-- Pied de Tableau -->
+        <tfoot class="bg-blue-100 font-bold">
+          <tr>
+            <td
+              class="px-4 py-4 border border-blue-200 text-center"
+              colspan="3"
+            >
+              Total solde des impayés
+            </td>
+            <td class="px-4 py-2 border border-blue-200 text-center">
+              -96 500
+            </td>
+            <td class="px-4 py-2 border border-blue-200"></td>
+          </tr>
+        </tfoot>
       </table>
     </div>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.getElementById("sidebar");
+
+      // Toggle sidebar visibility
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("-translate-x-full");
+        document.body.classList.toggle("overlay-active"); // Add class to detect if the overlay should be active
+      });
+
+      // Close sidebar when clicking outside
+      document.addEventListener("click", (event) => {
+        if (
+          !sidebar.contains(event.target) && // Click is outside the sidebar
+          !menuBtn.contains(event.target) && // Click is not on the button
+          !sidebar.classList.contains("-translate-x-full") // Sidebar is open
+        ) {
+          sidebar.classList.add("-translate-x-full");
+          document.body.classList.remove("overlay-active");
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const settingBtn = document.getElementById("setting-btn");
+        const settingsModal = document.getElementById("settings-modal");
+        const closeBtn = document.getElementById("close-btn");
+
+        // Ouvrir la fenêtre modale
+        settingBtn.addEventListener("click", () => {
+          settingsModal.classList.remove("hidden");
+          settingsModal.classList.add("show");
+        });
+
+        // Fermer la fenêtre modale
+        closeBtn.addEventListener("click", () => {
+          settingsModal.classList.add("hidden");
+          settingsModal.classList.remove("show");
+        });
+
+        // Fermer la modale en cliquant en dehors de son contenu
+        settingsModal.addEventListener("click", (event) => {
+          if (event.target === settingsModal) {
+            settingsModal.classList.add("hidden");
+            settingsModal.classList.remove("show");
+          }
+        });
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        const languageBtn = document.getElementById("language-btn");
+        const languageModal = document.getElementById("language-modal");
+        const closeLanguageBtn = document.getElementById("close-language-btn");
+        const frenchBtn = document.getElementById("french-btn");
+        const englishBtn = document.getElementById("english-btn");
+
+        // Ouvrir la fenêtre modale
+        languageBtn.addEventListener("click", (e) => {
+          e.preventDefault(); // Empêche le rechargement de la page
+          languageModal.classList.remove("hidden");
+          languageModal.classList.add("show");
+        });
+
+        // Fermer la fenêtre modale
+        closeLanguageBtn.addEventListener("click", () => {
+          languageModal.classList.add("hidden");
+          languageModal.classList.remove("show");
+        });
+
+        // Actions pour les boutons de langue
+        frenchBtn.addEventListener("click", () => {
+          alert("Langue sélectionnée : Français");
+          // Ajoutez ici votre logique pour appliquer le français
+        });
+
+        englishBtn.addEventListener("click", () => {
+          alert("Langue sélectionnée : Anglais");
+          // Ajoutez ici votre logique pour appliquer l'anglais
+        });
+
+        // Fermer la modale en cliquant en dehors de son contenu
+        languageModal.addEventListener("click", (event) => {
+          if (event.target === languageModal) {
+            languageModal.classList.add("hidden");
+            languageModal.classList.remove("show");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
