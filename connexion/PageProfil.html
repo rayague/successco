@@ -30,7 +30,7 @@
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
   </head>
   <body
-    class="container-fluid bg-yellow-100"
+    class="container-fluid bg-yellow-100 relative h-screen overscroll-y-scroll"
     style="font-family: 'Ubuntu', sans-serif"
   >
     <!-- Header Section -->
@@ -47,7 +47,7 @@
       <h3
         class="text-black text-white font-semibold text-md lg:text-2xl md:text-xl text-center sm:text-md lg:font-semibold"
       >
-        SuccèsSco
+        SuccèsSco <span>Bénin</span>
       </h3>
     </header>
     <img
@@ -61,7 +61,7 @@
         class="relative flex lg:flex-row md:flex-row items-center justify-between flex-col space-x-0 md:space-x-2 md:space-y-0 lg:space-x-2 lg:space-y-0 space-y-2 w-[80%] mx-auto"
       >
         <!-- Sélection du pays -->
-        <div class="relative w-full lg:w-1/3">
+        <!-- <div class="relative w-full lg:w-1/3">
           <i
             class="fa fa-globe absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
           ></i>
@@ -74,10 +74,10 @@
             <option value="senegal">Senegal</option>
             <option value="burkina">Burkina Faso</option>
           </select>
-        </div>
+        </div> -->
 
         <!-- Sélection de la langue -->
-        <div class="relative w-full lg:w-1/3">
+        <div class="relative w-full mx-auto lg:w-1/3">
           <i
             class="fa fa-language absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
           ></i>
@@ -94,7 +94,7 @@
           </select>
         </div>
         <!-- Sélection du portail -->
-        <div class="relative w-full lg:w-1/3">
+        <!-- <div class="relative w-full lg:w-1/3">
           <i
             class="fa fa-door-open absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
           ></i>
@@ -109,7 +109,7 @@
             <option value="portail_privee">Portail privee</option>
             <option value="portail_catholiaque">Portail catholique</option>
           </select>
-        </div>
+        </div> -->
       </div>
       <h4 class="text-center top-12 text-xs mt-4 text-gray-500 text-left">
         Cliquez sur votre profil pour vous connecter
@@ -118,64 +118,111 @@
       <!-- Information supplémentaire -->
 
       <!-- Grille des portails -->
-      <div
-        class="grid grid-cols-2 gap-0 w-full lg:w-3/4 md:w-3/5 sm:w-2/3 mx-auto"
-      >
-        <a href="#">
+      <div class="grid grid-cols-2 gap-4 w-11/12 lg:w-1/3 sm:w-2/3 mx-auto">
+        <a
+          href="#"
+          class="relative items-center flex flex-col lg:flex-row md:flex-row gap-2 justify-center w-full bg-green-600 rounded-2xl p-6 shadow-sm shadow-yellow-200"
+        >
           <img
-            class="w-full"
-            src="../assets/images/profil/menu3.png"
+            src="../assets/images/profil/icone2.png"
+            class="w-1/3"
             alt="Administration"
           />
+          <h3 class="font-bold text-white text-xs lg:text-lg">
+            Administration
+          </h3>
         </a>
-        <a href="">
+        <a
+          href=""
+          class="relative items-center justify-center flex flex-col lg:flex-row md:flex-row gap-2 w-full rounded-2xl p-6 bg-yellow-400 shadow-sm shadow-yellow-200"
+        >
           <img
-            class="w-full"
-            src="../assets/images/profil/menu4.png"
+            src="../assets/images/profil/icone3.png"
+            class="w-1/3"
             alt="Enseignants"
           />
+          <h3 class="font-bold text-white text-xs lg:text-lg">Enseignants</h3>
         </a>
-        <a href="PageParentDesCours.html">
+        <a
+          href="PageParentDesCours.html"
+          class="relative items-center justify-center flex flex-col lg:flex-row md:flex-row gap-2 w-full bg-red-600 shadow-sm shadow-yellow-200 rounded-2xl p-4"
+        >
           <img
-            class="w-full"
-            src="../assets/images/profil/menu2.png"
+            src="../assets/images/profil/icone1.png"
+            class="w-1/3"
             alt="Parents"
           />
+          <h3 class="font-bold text-white text-xs lg:text-lg">Parents</h3>
         </a>
-        <a href="#">
+        <a
+          href="#"
+          class="items-center justify-center flex flex-col lg:flex-row md:flex-row gap-2 w-full bg-sky-700 rounded-2xl p-2 shadow-sm shadow-yellow-200"
+        >
           <img
-            class="w-full"
-            src="../assets/images/profil/menu1.png"
+            src="../assets/images/profil/icone4.png"
+            class="w-1/4 lg:w-1/3"
             alt="TvSuccessco"
           />
+          <h3 class="font-bold text-white text-xs lg:text-lg">
+            TvSuccèssco élèves et parents
+          </h3>
         </a>
       </div>
-      <h3 class="font-semibold text-xs text-gray-500 text-center"></h3>
     </div>
 
     <div
-      class="w-4/5 flex lg:flex-row md:flex-row sm:flex-row flex-col gap-2 mx-auto my-2"
+      class="w-4/5 flex lg:flex-row md:flex-row sm:flex-row flex-col gap-2 mx-auto lg:my-28 my-5"
     >
-      <a href="#">
-        <img
-          class="w-full"
-          src="../assets/images/profil/image1.png"
-          alt="Administration"
-        />
+      <a
+        href="#"
+        class="flex flex-row items-center justify-start w-full gap-2 p-2 rounded-full bg-sky-300/50"
+      >
+        <div
+          class="bg-sky-400/50 flex flex-row items-center justify-center p-2 rounded-full"
+        >
+          <img
+            class="w-1/2"
+            src="../assets/images/profil/image3.png"
+            alt="Crée un établissement"
+          />
+        </div>
+        <h3 class="text-center font-normal text-sm text-sky-700">
+          Crée un établissement
+        </h3>
       </a>
-      <a href="#">
-        <img
-          class="w-full"
-          src="../assets/images/profil/image3.png"
-          alt="Enseignants"
-        />
+      <a
+        href="#"
+        class="flex flex-row items-center justify-start gap-2 w-full p-2 rounded-full bg-sky-300/50"
+      >
+        <div
+          class="bg-sky-400/50 flex flex-row items-start justify-center p-2 rounded-full"
+        >
+          <img
+            class="w-1/2"
+            src="../assets/images/profil/image2.png"
+            alt="Partager SuccèsSco"
+          />
+        </div>
+        <h3 class="text-center font-normal text-sm text-sky-700">
+          Recommander l'application
+        </h3>
       </a>
-      <a href="PageParentDesCours.html">
-        <img
-          class="w-full"
-          src="../assets/images/profil/image2.png"
-          alt="Parents"
-        />
+      <a
+        href="#"
+        class="flex flex-row items-center justify-start gap-2 w-full p-2 rounded-full bg-sky-300/50"
+      >
+        <div
+          class="bg-sky-400/50 flex flex-row items-center justify-center p-2 rounded-full"
+        >
+          <img
+            class="w-1/2"
+            src="../assets/images/profil/image1.png"
+            alt="Chat bot"
+          />
+        </div>
+        <h3 class="text-center font-normal text-sm text-sky-700">
+          Crée un établissement
+        </h3>
       </a>
     </div>
   </body>

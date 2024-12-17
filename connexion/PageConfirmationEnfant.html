@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <title>SuccèsSco</title>
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.min.js"></script>
+
+
+  <!-- Tailwind CSS config -->
+  <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  </head>
+  <body
+    class="container-fluid bg-yellow-100 relative"
+    style="font-family: 'Ubuntu', sans-serif"
+  >
+    <!-- Header Section -->
+    <header
+      class="bg-white w-full relative py-1 pl-2 top-0 left-0 shadow-lg z-50"
+    >
+      <h3
+        class="text-black font-semibold text-md lg:text-2xl md:text-xl sm:text-md lg:font-semibold"
+      >
+        Ecole Choisie
+      </h3>
+    </header>
+    <header class="bg-sky-700 w-full relative py-1 top-0 left-0 shadow-lg z-50">
+      <h3
+        class="text-black text-white font-semibold text-md lg:text-2xl md:text-xl text-center sm:text-md lg:font-semibold"
+      >
+        SuccèsSco Bénin
+      </h3>
+    </header>
+    <img
+      src="../assets/images/ecoleChoisie/bg.png"
+      class="items-center h-screen fixed -z-30 top-0 left-0 justify-items-center opacity-30"
+      alt=""
+    />
+
+    <div class="flex flex-col items-center justify-center lg:flex-row mt-4 lg:mt-2 ">
+
+
+
+      <div class=" w-full lg:w-1/3 h-full p-2 mx-auto order-2 lg:order-1">
+        <div class="flex items-center py-2 rounded-2xl justify-center h-full">
+          <!-- Carousel Container -->
+          <div id="flex flex-col gap-2" class="relative lg:w-4/5 md:w-3/4 sm:w-3/4 w-full h-1/2 overflow-hidden rounded-lg">
+            <!-- Carousel Items -->
+            <div class="w-full my-2">
+              <img src="../assets/images/image4.png" class="w-full h-full object-cover rounded-lg" alt="Image 1">
+            </div>
+            <div class="w-full my-2">
+              <img src="../assets/images/image7.png" class="w-full h-full object-cover rounded-lg" alt="Image 2">
+            </div>
+            <div class="w-full my-2">
+              <img src="../assets/images/image3.png" class="w-full h-full object-cover rounded-lg" alt="Image 3">
+            </div>
+            <div class="w-full my-2">
+              <img src="../assets/images/image5.png" class="w-full h-full object-cover rounded-lg" alt="Image 3">
+            </div>
+            <div class="w-full my-2">
+              <img src="../assets/images/image6.png" class="w-full h-full object-cover rounded-lg" alt="Image 3">
+            </div>
+        
+          </div>
+        </div>
+      </div>
+
+
+      <div class="flex flex-col gap-2 w-11/12 lg:w-1/3  mx-auto sm:max-w-md lg:w-1/3 order-1 lg:order-2 md:order-1">
+        <div class=" my-5 relative">
+          <i
+            class=" absolute top-3 left-3  fa fa-language text-gray-400"
+          ></i>
+          <select
+            class="pl-10 border border-gray-300 text-gray-500 text-center rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+          >
+            <option value="" disabled selected>
+              -- Choisissez une langue ici --
+            </option>
+            <option value="fr">Francais</option>
+            <option value="fon">Fon</option>
+            <option value="idaash">Idaasha</option>
+            <option value="mina">Mina</option>
+          </select>
+        </div>
+        <div class="bg-yellow-500 px-5 py-3 rounded-2xl">
+        <h3 class="text-center font-bold text-2xl">
+          Connexion Parent 
+        </h3>
+        <img
+          src="../assets/images/portailParent/image1.png"
+          class="flex w-12 mx-auto items-center justify-items-center my-5"
+          alt=""
+        />
+      
+        <!-- Début du formulaire -->
+        <form action="PageEcoleChoisie.html" class="flex flex-col gap-2">
+
+          <input
+          type="text"
+          name="code"
+          placeholder="Entrer votre code"
+          required
+          class="border border-gray-300 bg-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Entrer votre mot de passe"
+          required
+          class="border border-gray-300 bg-gray-100 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+        />
+
+          <button
+            type="submit"
+            class="border border-gray-300 lg:w-full w-full mx-auto lg:text-lg text-sm rounded-lg p-2 my-2 text-center bg-sky-700 text-white font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            Connexion parent
+          </button>
+        </form>
+        <!-- Fin du formulaire -->
+      </div>
+    </div>
+
+
+
+      <div>
+        
+      </div>
+      
+      <div class="w-full  lg:w-1/3 h-1/2 lg:mt-0 mt-4 my-auto order-3 lg:order-3">
+        <!-- <h3 class="text-center font-bold mt-2 text-xl">Tv SuccesSco</h3> -->
+        <div
+          class="flex items-center py-4 rounded-2xl justify-center h-full"
+        >
+          <iframe
+            class="w-11/12 lg:w-3/4 h-1/2"
+            src="https://www.youtube.com/embed/47INzI-xgHM"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div
+          class="flex items-center py-4 rounded-2xl justify-center h-full"
+        >
+          <iframe
+            class="w-11/12 lg:w-3/4 h-1/2"
+            src="https://www.youtube.com/embed/47INzI-xgHM"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div
+          class="flex items-center py-4 rounded-2xl justify-center h-full"
+        >
+          <iframe
+            class="w-11/12 lg:w-3/4 h-1/2"
+            src="https://www.youtube.com/embed/47INzI-xgHM"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+
+    </div>
+    </div>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const carouselItems = document.querySelectorAll(".carousel-item");
+  const prevButton = document.querySelector(".carousel-control-prev");
+  const nextButton = document.querySelector(".carousel-control-next");
+  let currentIndex = 0;
+
+  // Fonction pour mettre à jour l'élément actif
+  const updateCarousel = (index) => {
+    carouselItems.forEach((item, i) => {
+      item.classList.remove("active");
+      if (i === index) {
+        item.classList.add("active");
+      }
+    });
+  };
+
+  // Écouteurs d'événements pour les boutons
+  prevButton.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+    updateCarousel(currentIndex);
+  });
+
+  nextButton.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % carouselItems.length;
+    updateCarousel(currentIndex);
+  });
+
+  // Fonction de lecture automatique
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % carouselItems.length;
+    updateCarousel(currentIndex);
+  }, 5000); // Changer l'image toutes les 5 secondes
+});
+
+
+    </script>
+  </body>
+</html>
