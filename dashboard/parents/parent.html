@@ -59,33 +59,34 @@
       </h3>
     </header>
     <header class="w-full bg-sky-700 py-1 top-0 left-0 shadow-lg z-50">
-      <div class="max-w-7xl mx-auto flex items-center justify-between px-4">
-        <!-- <i class="fa fa-bars text-white/50 cursor-pointer"></i> -->
+      <div class="w-full mx-auto flex items-center justify-between">
         <img
           src="../../assets/images/tableauDeBoard/navig4.png
       "
-          class="w-5 mx-3 cursor-pointer"
+          class="w-5 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
           alt=""
           id="menu-btn"
         />
-        <h3 class="text-md text-white font-bold">SuccesSco Benin</h3>
+        <h3 class="text-sm lg:text-md text-center text-white font-bold">
+          SuccesSco Benin
+        </h3>
         <div class="flex flex-row">
           <img
             src="../../assets/images/tableauDeBoard/navig3.png
           "
-            class="w-6 mx-3 cursor-pointer"
+            class="w-6 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
             alt=""
           />
           <img
             src="../../assets/images/tableauDeBoard/navig2.png
         "
-            class="w-5 mx-3 cursor-pointer"
+            class="w-5 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
             alt=""
           />
           <img
             src="../../assets/images/tableauDeBoard/navig1.png
       "
-            class="w-5 mx-3 cursor-pointer"
+            class="w-5 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
             alt=""
             id="setting-btn"
           />
@@ -374,35 +375,41 @@
 
     <header class="w-full bg-white py-1 top-0 left-0 shadow-lg z-50">
       <div
-        class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2"
+        class="m-full mx-auto flex flex-col lg:flex-row md:flex-row items-start justify-evenly py-2 px-auto"
       >
-        <div class="flex flex-col md:flex-col lg:flex-row items-center">
+        <div
+          class="flex flex-row md:flex-row lg:flex-row items-center ml-4 lg:ml-0 md:ml-0 justify-between mb-2"
+        >
           <img
             src="../../assets/images/tableauDeBoard/image3.png"
             class="w-4"
             alt=""
           />
-          <h3 class="mx-3 text-sm font-semibold">LENOIR Bonheur</h3>
+          <h3 class="mx-3 text-xs font-semibold">LENOIR Bonheur</h3>
         </div>
-        <div class="flex flex-col md:flex-col lg:flex-row items-center">
+        <div
+          class="flex flex-row md:flex-row lg:flex-row items-center ml-4 lg:ml-0 md:ml-0 justify-between mb-2"
+        >
           <img
             src="../../assets/images/tableauDeBoard/image2.png"
             class="w-4"
             alt=""
           />
           <a href="">
-            <h3 class="mx-3 text-sm font-semibold text-sky-700">
+            <h3 class="mx-3 text-xs font-semibold text-sky-700">
               Comptes et mot de passe >
             </h3>
           </a>
         </div>
-        <div class="flex flex-col md:flex-col lg:flex-row items-center">
+        <div
+          class="flex flex-row md:flex-row lg:flex-row items-center ml-4 lg:ml-0 md:ml-0 justify-between mb-2"
+        >
           <img
             src="../../assets/images/tableauDeBoard/image1.png"
             class="w-4"
             alt=""
           />
-          <h3 class="mx-3 text-sm font-semibold text-sky-700">
+          <h3 class="text-xs mx-3 font-semibold text-sky-700">
             Validité forfait : 31/12/2024 a 13h:34mn
           </h3>
         </div>
@@ -414,68 +421,91 @@
       cliquer ici >...
     </h3>
     <div class="flex flex-col lg:flex-row">
-      <div class="flex flex-col w-1/2">
+      <div
+        class="flex flex-col w-[90%] mx-auto items-center justify-center lg:w-1/2"
+      >
         <div class="w-full items-start">
           <h3 class="text-center font-bold mt-0 text-md">Infos classe</h3>
-          <div class="grid grid-cols-2 w-full">
-            <div class="relative">
-              <img
-                src="../../assets/images/tableauDeBoard/matiere1.png"
-                class=""
-                alt=""
-              />
-              <h3
-                class="absolute top-7 right-12 font-black text-sky-700 text-4xl"
-              >
-                89
-              </h3>
+          <div
+            class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 w-full gap-2"
+          >
+            <div
+              class="items-center flex flex-row justify-between bg-yellow-500 rounded-3xl p-3"
+            >
+              <div class="flex flex-col items-center justify-center">
+                <img
+                  src="../../assets/images/tableauDeBoard/button8.png"
+                  class="w-[40px]"
+                  alt=""
+                />
+                <h3 class="font-semibold">Tranches</h3>
+              </div>
+              <div class="rounded-full border border-sky-700 border-2 p-2">
+                <h3 class="font-black text-sky-700 text-4xl">12</h3>
+              </div>
             </div>
-            <div class="relative">
-              <img
-                src="../../assets/images/tableauDeBoard/matiere2.png"
-                class=""
-                alt=""
-              />
-              <h3
-                class="absolute top-7 right-12 font-black text-sky-700 text-4xl"
-              >
-                89
-              </h3>
+
+            <div
+              class="items-center flex flex-row justify-between bg-yellow-500 rounded-3xl p-3"
+            >
+              <div class="flex flex-col items-center justify-center">
+                <img
+                  src="../../assets/images/tableauDeBoard/button9.png"
+                  class="w-[40px]"
+                  alt=""
+                />
+                <h3 class="font-semibold">Enseignants</h3>
+              </div>
+              <div class="rounded-full border border-sky-700 border-2 p-2">
+                <h3 class="font-black text-sky-700 text-4xl">24</h3>
+              </div>
             </div>
-            <div class="relative">
-              <img
-                src="../../assets/images/tableauDeBoard/matiere3.png"
-                class=""
-                alt=""
-              />
-              <h3
-                class="absolute top-7 right-12 font-black text-sky-700 text-4xl"
-              >
-                89
-              </h3>
+
+            <div
+              class="items-center flex flex-row justify-between bg-yellow-500 rounded-3xl p-3"
+            >
+              <div class="flex flex-col items-center justify-center">
+                <img
+                  src="../../assets/images/tableauDeBoard/button10.png"
+                  class="w-[40px]"
+                  alt=""
+                />
+                <h3 class="font-semibold">Matière</h3>
+              </div>
+              <div class="rounded-full border border-sky-700 border-2 p-2">
+                <h3 class="font-black text-sky-700 text-4xl">19</h3>
+              </div>
             </div>
-            <div class="relative">
-              <img
-                src="../../assets/images/tableauDeBoard/matiere4.png"
-                class=""
-                alt=""
-              />
-              <h3
-                class="absolute top-7 right-12 font-black text-sky-700 text-4xl"
-              >
-                89
-              </h3>
+
+            <div
+              class="items-center flex flex-row justify-between bg-yellow-500 rounded-3xl p-3"
+            >
+              <div class="flex flex-col items-center justify-center">
+                <img
+                  src="../../assets/images/tableauDeBoard/button11.png"
+                  class="w-[40px]"
+                  alt=""
+                />
+                <h3 class="font-semibold">Effectif Classe</h3>
+              </div>
+              <div class="rounded-full border border-sky-700 border-2 p-2">
+                <h3 class="font-black text-sky-700 text-4xl">16</h3>
+              </div>
             </div>
           </div>
         </div>
         <div class="w-full h-full flex flex-col mx-2">
           <h3 class="text-center font-bold mt-0 text-md">Menu</h3>
           <div class="flex flex-col lg:flex-row">
-            <div class="w-full flex-grow mx-1">
-              <div class="w-full flex flex-row my-1">
+            <div
+              class="w-full items-center justify-center flex-grow lg:mx-1 md:mx-1 mx-0"
+            >
+              <div
+                class="w-full flex flex-col gap-2 md:flex-row lg:flex-row my-1"
+              >
                 <a
                   href="../../menu/parent/Solde.html"
-                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center p-1 border-blue-400 rounded-2xl mx-1 text-sky-800 font-semibold text-xs"
+                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center md:p-3 lg:p-2 p-3 border-blue-400 rounded-2xl lg:mx-1 md:mx-1 mx-0 text-sky-800 font-semibold text-xs"
                 >
                   <img
                     class="w-5"
@@ -486,7 +516,7 @@
                 </a>
                 <a
                   href="../../menu/parent/Note.html"
-                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center p-1 border-blue-400 rounded-2xl mx-1 text-sky-800 font-semibold text-xs"
+                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center md:p-3 lg:p-2 p-3 border-blue-400 rounded-2xl lg:mx-1 md:mx-1 mx-0 text-sky-800 font-semibold text-xs"
                 >
                   <img
                     class="w-5"
@@ -499,7 +529,7 @@
               <div class="w-full flex flex-row my-1">
                 <a
                   href="../../menu/parent/ExerciceMaison.html"
-                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center p-1 border-blue-400 rounded-2xl mx-1 text-sky-800 font-semibold text-xs"
+                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center md:p-3 lg:p-2 p-3 border-blue-400 rounded-2xl mx-0 lg:mx-1 md:mx-1 text-sky-800 font-semibold text-xs"
                 >
                   <img
                     class="w-5"
@@ -512,7 +542,7 @@
               <div class="w-full flex flex-row my-1">
                 <a
                   href="../../menu/parent/NiveauProgramme.html"
-                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center p-1 border-blue-400 rounded-2xl mx-1 text-sky-800 font-semibold text-xs"
+                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center md:p-3 lg:p-2 p-3 border-blue-400 rounded-2xl mx-0 lg:mx-1 md:mx-1 text-sky-800 font-semibold text-xs"
                 >
                   <img
                     class="w-5"
@@ -523,14 +553,16 @@
                 </a>
               </div>
             </div>
-            <div class="w-full flex-grow mx-1">
-              <div class="w-full flex flex-row my-1">
+            <div class="w-full flex-grow lg:mx-1 md:mx-1 mx-0">
+              <div
+                class="w-full flex flex-col gap-2 md:flex-row lg:flex-row my-1"
+              >
                 <a
                   href="../../menu/parent/Absence.html"
-                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center p-1 border-blue-400 rounded-2xl mx-1 text-sky-800 font-semibold text-xs"
+                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center md:p-3 lg:p-2 p-3 border-blue-400 rounded-2xl lg:mx-1 md:mx-1 mx-0 text-sky-800 font-semibold text-xs"
                 >
                   <img
-                    class="w-4"
+                    class="w-5"
                     src="../../assets/images/tableauDeBoard/button7.png"
                     alt=""
                   />
@@ -538,7 +570,7 @@
                 </a>
                 <a
                   href="../../menu/parent/Conduite.html"
-                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center p-1 border-blue-400 rounded-2xl mx-1 text-sky-800 font-semibold text-xs"
+                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center md:p-3 lg:p-2 p-3 border-blue-400 rounded-2xl lg:mx-1 md:mx-1 mx-0 text-sky-800 font-semibold text-xs"
                 >
                   <img
                     class="w-[14px]"
@@ -548,10 +580,12 @@
                   Conduite
                 </a>
               </div>
-              <div class="w-full flex flex-row my-1">
+              <div
+                class="w-full flex flex-col gap-2 md:flex-row lg:flex-row my-1"
+              >
                 <a
                   href="../../menu/parent/Messagerie.html"
-                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center p-1 border-blue-400 rounded-2xl mx-1 text-sky-800 font-semibold text-xs"
+                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center md:p-3 lg:p-2 p-3 border-blue-400 rounded-2xl lg:mx-1 md:mx-1 mx-0 text-sky-800 font-semibold text-xs"
                 >
                   <img
                     class="w-5"
@@ -562,7 +596,7 @@
                 </a>
                 <a
                   href="../../menu/parent/Contact.html"
-                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center p-1 border-blue-400 rounded-2xl mx-1 text-sky-800 font-semibold text-xs"
+                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center md:p-3 lg:p-2 p-3 border-blue-400 rounded-2xl lg:mx-1 md:mx-1 mx-0 text-sky-800 font-semibold text-xs"
                 >
                   <img
                     class="w-4"
@@ -575,7 +609,7 @@
               <div class="w-full flex flex-row my-1">
                 <a
                   href="../../menu/parent/RappelVaccination.html"
-                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center p-1 border-blue-400 rounded-2xl mx-1 text-sky-800 font-semibold text-xs"
+                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center md:p-3 lg:p-2 py-3 border-blue-400 rounded-2xl lg:mx-1 md:mx-1 mx-0 text-sky-800 font-semibold text-xs"
                 >
                   <img
                     class="w-5"
@@ -590,7 +624,9 @@
         </div>
       </div>
 
-      <div class="w-1/2 flex flex-col lg:flex-row h-auto">
+      <div
+        class="lg:w-1/2 w-11/12 mx-auto items-center justify-center flex flex-col lg:flex-row h-auto"
+      >
         <div class="w-full h-4/5 mx-2">
           <h3 class="text-center font-bold mt-2 text-xl">Tv SuccesSco</h3>
           <div
@@ -615,32 +651,32 @@
       <div class="flex flex-wrap justify-center items-center gap-4">
         <img
           src="../../assets/images/tableauDeBoard/partenaire5.png"
-          class="w-16 h-16 object-contain rounded"
+          class="w-8 md:w-10 lg:w-16 object-contain rounded"
           alt="Partenaire 2"
         />
         <img
           src="../../assets/images/tableauDeBoard/partenaire4.png"
-          class="w-16 h-16 object-contain rounded"
+          class="w-8 md:w-10 lg:w-16 object-contain rounded"
           alt="Partenaire 3"
         />
         <img
           src="../../assets/images/tableauDeBoard/partenaire6.png"
-          class="w-16 h-16 object-cover rounded"
+          class="w-8 md:w-10 lg:w-16 object-cover rounded"
           alt="Partenaire 5"
         />
         <img
           src="../../assets/images/tableauDeBoard/partenaire2.png"
-          class="h-16 object-contain rounded"
+          class="w-8 md:w-10 lg:w-16 object-contain rounded"
           alt="Partenaire 4"
         />
         <img
           src="../../assets/images/tableauDeBoard/partenaire1.png"
-          class="w-16 h-16 object-contain rounded"
+          class="w-8 md:w-10 lg:w-16 object-contain rounded"
           alt="Partenaire 1"
         />
         <img
           src="../../assets/images/tableauDeBoard/partenaire3.png"
-          class="h-16 object-contain rounded"
+          class="w-24 md:w-10 lg:w-16 object-contain rounded"
           alt="Partenaire 5"
         />
       </div>
