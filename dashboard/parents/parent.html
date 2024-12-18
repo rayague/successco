@@ -169,7 +169,7 @@
       <div class="p-4">
         <h3 class="text-lg font-bold mb-4">Menu</h3>
         <ul class="space-y-4">
-          <li
+          <!-- <li
             class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
             id="language-btn"
           >
@@ -180,7 +180,23 @@
                 alt=""
                 class="w-4"
             /></a>
+          </li> -->
+
+          <!-- Menu déroulant pour la sélection de la langue -->
+          <li class="flex items-center hover:text-sky-700 cursor-pointer">
+            <select
+              id="language-select"
+              class="appearance-none bg-transparent border border-1 border-gray-100 p-2 rounded-2xl bg-gray-300 cursor-pointer"
+            >
+              <option value="">Choisissez votre langue</option>
+              <option value="fr">Français</option>
+              <option value="en">Anglais</option>
+              <option value="fon">Fon</option>
+              <option value="idaash">Idaasha</option>
+              <option value="mina">Mina</option>
+            </select>
           </li>
+
           <li
             class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
           >
@@ -338,36 +354,45 @@
       </div>
     </div>
 
+    <!-- Inclure les icônes avec Heroicons -->
+    <script src="https://unpkg.com/@heroicons/vue@1.0.6/dist/outline/index.js"></script>
+
     <!-- Fenêtre modale -->
     <div
       id="settings-modal"
       class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
     >
-      <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
-        <h2 class="text-lg font-bold mb-4">Paramètres</h2>
-        <p class="mb-4">Modifiez vos paramètres ici.</p>
+      <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-sm">
+        <!-- Titre de la modale -->
+        <h2 class="text-lg font-bold mb-4 text-center">Paramètres</h2>
 
         <!-- Bouton Voir le Profil -->
         <button
           id="profile-btn"
-          class="block w-full mb-3 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          class="flex items-center w-full mb-3 px-4 py-2 rounded hover:bg-sky-200 transition"
         >
+          <!-- Icône profil avec Font Awesome -->
+          <i class="fa-solid fa-user w-5 h-5 mr-3"></i>
           Voir le Profil
         </button>
 
         <!-- Bouton Déconnexion -->
         <button
           id="logout-btn"
-          class="block w-full mb-3 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+          class="flex items-center w-full mb-3 px-4 py-2 rounded hover:bg-sky-200 transition"
         >
+          <!-- Icône Déconnexion avec Font Awesome -->
+          <i class="fa-solid fa-right-from-bracket w-5 h-5 mr-3"></i>
           Déconnexion
         </button>
 
         <!-- Bouton Fermer -->
         <button
           id="close-btn"
-          class="block w-full bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+          class="flex items-center w-full px-4 py-2 text-center rounded hover:bg-sky-200 transition"
         >
+          <!-- Icône Fermer avec Font Awesome -->
+          <i class="fa-solid fa-xmark w-5 h-5 mr-3"></i>
           Fermer
         </button>
       </div>
@@ -418,7 +443,10 @@
 
     <h3 class="text-center text-sm font-bold my-2">
       Recevez-vous quotidiennement les infos sur votre enfant? sinon, veuillez
-      cliquer ici >...
+      <a href="" class="text-sky-700 underline underline-offset-3"
+        >cliquer ici ></a
+      >
+      ...
     </h3>
     <div class="flex flex-col lg:flex-row">
       <div
