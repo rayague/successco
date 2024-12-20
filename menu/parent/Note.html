@@ -371,30 +371,162 @@
           />
           <h3 class="mx-3 text-sm font-semibold">LENOIR Bonheur</h3>
         </div>
-        <div class="flex flex-col md:flex-col lg:flex-row items-center">
-          <img
-            src="../../assets/images/tableauDeBoard/image2.png"
-            class="w-4"
-            alt=""
-          />
-          <a href="">
-            <h3 class="mx-3 text-sm font-semibold text-sky-700">
-              Comptes et mot de passe >
-            </h3>
-          </a>
-        </div>
-        <div class="flex flex-col md:flex-col lg:flex-row items-center">
-          <img
-            src="../../assets/images/tableauDeBoard/image1.png"
-            class="w-4"
-            alt=""
-          />
-          <h3 class="mx-3 text-sm font-semibold text-sky-700">
-            Validite forfait : 31/12/2024 a 13h:34mn
-          </h3>
-        </div>
       </div>
     </header>
+
+    <!-- Profile and Title Section -->
+    <section class="bg-blue-100 p-4">
+      <div class="flex items-center space-x-4">
+        <img
+          src="../../assets/images/icons/profile.png"
+          alt="Profile Icon"
+          class="h-12 w-12"
+        />
+        <div>
+          <h2 class="text-lg font-bold text-blue-700">LENOIR Bonheur</h2>
+          <p class="text-gray-600">Récapitulatif des notes disponibles</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav
+      class="bg-white w-[95%] mx-auto rounded-2xl shadow-md p-2 flex justify-between items-center overflow-x-auto"
+    >
+      <button
+        class="text-gray-600 font-semibold px-4 py-2 hover:text-blue-700 focus:text-blue-700"
+      >
+        Anglais
+      </button>
+      <button
+        class="text-gray-600 font-semibold px-4 py-2 hover:text-blue-700 focus:text-blue-700"
+      >
+        Français
+      </button>
+      <button
+        class="text-gray-600 font-semibold px-4 py-2 hover:text-blue-700 focus:text-blue-700"
+      >
+        Allemand
+      </button>
+      <button
+        class="text-gray-600 font-semibold px-4 py-2 hover:text-blue-700 focus:text-blue-700"
+      >
+        Espagnol
+      </button>
+      <button
+        class="text-blue-700 font-semibold px-4 py-2 bg-yellow-300 rounded"
+      >
+        Maths
+      </button>
+      <button
+        class="text-gray-600 font-semibold px-4 py-2 hover:text-blue-700 focus:text-blue-700"
+      >
+        SVT
+      </button>
+      <button
+        class="text-gray-600 font-semibold px-4 py-2 hover:text-blue-700 focus:text-blue-700"
+      >
+        PCT
+      </button>
+      <button
+        class="text-gray-600 font-semibold px-4 py-2 hover:text-blue-700 focus:text-blue-700"
+      >
+        EPS
+      </button>
+      <button
+        class="text-gray-600 font-semibold px-4 py-2 hover:text-blue-700 focus:text-blue-700"
+      >
+        Hist-Géo
+      </button>
+      <button
+        class="text-gray-600 font-semibold px-4 py-2 hover:text-blue-700 focus:text-blue-700"
+      >
+        PPLE
+      </button>
+    </nav>
+
+    <!-- Warning Message -->
+    <div class="bg-yellow-100 text-yellow-800 p-2 text-sm text-center mt-2">
+      <i class="fas fa-exclamation-circle"></i>
+      Si vous voyez le sigle <b>A/J</b> devant une note, cela signifie
+      <b>absence justifiée</b>.
+    </div>
+
+    <!-- Table Section -->
+    <section
+      class="bg-sky-700 w-[95%] mx-auto text-white p-4 mt-4 rounded-md shadow-lg"
+    >
+      <div class="flex items-center mb-4">
+        <img
+          src="../../assets/images/icons/notes.png"
+          alt="Notes Icon"
+          class="h-8 w-8"
+        />
+        <h2 class="text-lg font-bold ml-2">
+          Récapitulatif des notes de Mathématiques
+        </h2>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="table-auto border-collapse w-full text-center">
+          <thead>
+            <tr class="bg-blue-800">
+              <th class="py-2 px-4 border">Interro 1</th>
+              <th class="py-2 px-4 border">Interro 2</th>
+              <th class="py-2 px-4 border">Interro 3</th>
+              <th class="py-2 px-4 border">Interro 4</th>
+              <th class="py-2 px-4 border">Interro 5</th>
+              <th class="py-2 px-4 border">Interro 6</th>
+              <th class="py-2 px-4 border">Interro 7</th>
+              <th class="py-2 px-4 border">Interro 8</th>
+              <th class="py-2 px-4 border bg-yellow-400 text-black">
+                Moy. Interro
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white text-black">
+            <tr>
+              <td class="py-2 px-4 border">13</td>
+              <td class="py-2 px-4 border">17,5</td>
+              <td class="py-2 px-4 border">14</td>
+              <td class="py-2 px-4 border">15</td>
+              <td class="py-2 px-4 border">12,5</td>
+              <td class="py-2 px-4 border">18</td>
+              <td class="py-2 px-4 border">-</td>
+              <td class="py-2 px-4 border">-</td>
+              <td class="py-2 px-4 border bg-yellow-400 text-black">15,00</td>
+            </tr>
+          </tbody>
+          <thead>
+            <tr class="bg-blue-800">
+              <th class="py-2 px-4 border">Devoir 1</th>
+              <th class="py-2 px-4 border">Devoir 2</th>
+              <th class="py-2 px-4 border">Devoir 3</th>
+              <th class="py-2 px-4 border">Devoir 4</th>
+              <th class="py-2 px-4 border">Devoir 5</th>
+              <th class="py-2 px-4 border">Devoir 6</th>
+              <th class="py-2 px-4 border">Devoir 7</th>
+              <th class="py-2 px-4 border">Devoir 8</th>
+              <th class="py-2 px-4 border bg-yellow-400 text-black">
+                Moy. Générale
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white text-black">
+            <tr>
+              <td class="py-2 px-4 border">12</td>
+              <td class="py-2 px-4 border">00</td>
+              <td class="py-2 px-4 border">14</td>
+              <td class="py-2 px-4 border">16</td>
+              <td class="py-2 px-4 border">10</td>
+              <td class="py-2 px-4 border">13,5</td>
+              <td class="py-2 px-4 border">-</td>
+              <td class="py-2 px-4 border">-</td>
+              <td class="py-2 px-4 border bg-yellow-400 text-black">11,5</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
     <script>
       const menuBtn = document.getElementById("menu-btn");

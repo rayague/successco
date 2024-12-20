@@ -358,7 +358,6 @@
         </button>
       </div>
     </div>
-
     <header class="w-full bg-white py-1 top-0 left-0 shadow-lg z-50">
       <div
         class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2"
@@ -371,30 +370,68 @@
           />
           <h3 class="mx-3 text-sm font-semibold">LENOIR Bonheur</h3>
         </div>
-        <div class="flex flex-col md:flex-col lg:flex-row items-center">
-          <img
-            src="../../assets/images/tableauDeBoard/image2.png"
-            class="w-4"
-            alt=""
-          />
-          <a href="">
-            <h3 class="mx-3 text-sm font-semibold text-sky-700">
-              Comptes et mot de passe >
-            </h3>
-          </a>
-        </div>
-        <div class="flex flex-col md:flex-col lg:flex-row items-center">
-          <img
-            src="../../assets/images/tableauDeBoard/image1.png"
-            class="w-4"
-            alt=""
-          />
-          <h3 class="mx-3 text-sm font-semibold text-sky-700">
-            Validite forfait : 31/12/2024 a 13h:34mn
-          </h3>
-        </div>
       </div>
     </header>
+
+    <!-- Main content -->
+    <main class="p-4">
+      <!-- School Header -->
+      <div class="p-4 w-full flex items-center justify-center space-x-4">
+        <img
+          src="../../assets/images/tableauDeBoard/contact.png"
+          alt="School Icon"
+          class="w-24"
+        />
+        <div>
+          <p
+            class="text-center lg:text-5xl md:text-3xl sm:text-xl text-xl font-bold text-sky-700"
+          >
+            Rappel de vaccination de votre enfant
+          </p>
+        </div>
+      </div>
+
+      <!-- Subtitle -->
+      <div class="mt-4 text-center">
+        <p class="text-center font-semibold">
+          Liste des contacts utiles de l’établissement
+        </p>
+      </div>
+
+      <!-- Table -->
+      <div class="overflow-x-auto mt-6 rounded-3xl">
+        <table
+          class="table-auto border-collapse w-full text-center rounded-3xl"
+        >
+          <thead>
+            <tr class="bg-sky-700 text-white">
+              <th class="py-2 px-4 border">N°</th>
+              <th class="py-2 px-4 border">Entité</th>
+              <th class="py-2 px-4 border">Contacts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Example rows -->
+            <tr class="bg-white border-b">
+              <td class="py-2 px-4 border">1</td>
+              <td class="py-2 px-4 border">Secrétariat</td>
+              <td class="py-2 px-4 border">XX XX XX XX</td>
+            </tr>
+            <tr class="bg-gray-100 border-b">
+              <td class="py-2 px-4 border">2</td>
+              <td class="py-2 px-4 border">Censorat</td>
+              <td class="py-2 px-4 border">XX XX XX XX</td>
+            </tr>
+            <tr class="bg-white border-b">
+              <td class="py-2 px-4 border">3</td>
+              <td class="py-2 px-4 border">Surveillance</td>
+              <td class="py-2 px-4 border">XX XX XX XX</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+    </main>
 
     <script>
       const menuBtn = document.getElementById("menu-btn");
