@@ -375,17 +375,21 @@
     </header>
 
     <!-- Profile and Title Section -->
-    <section class="bg-blue-100 p-4">
-      <div class="flex items-center space-x-4">
+    <section class="flex p-1 w-full items-center justify-center">
+      <div
+        class="flex items-center w-full mx-auto justify-center flex-col md:flex-row lg:flex-row space-x-4"
+      >
         <img
-          src="../../assets/images/icons/profile.png"
+          src="../../assets/images/note/image2.png"
           alt="Profile Icon"
-          class="h-12 w-12"
+          class="w-28"
         />
-        <div>
-          <h2 class="text-lg font-bold text-blue-700">LENOIR Bonheur</h2>
-          <p class="text-gray-600">Récapitulatif des notes disponibles</p>
-        </div>
+
+        <p
+          class="text-sky-700 lg:text-4xl md:text-2xl sm:text-xl text-md font-bold"
+        >
+          Récapitulatif des notes disponibles de <span>LENOIR Bonheur</span>
+        </p>
       </div>
     </section>
 
@@ -394,69 +398,70 @@
       class="bg-white w-[95%] mx-auto rounded-2xl shadow-md p-2 flex justify-between items-center overflow-x-auto"
     >
       <button
-        class="text-gray-600 font-semibold px-4 py-2 hover:text-blue-700 focus:text-blue-700"
+        class="text-gray-600 font-semibold px-4 py-2 hover:text-sky-700 focus:text-blue-700"
       >
         Anglais
       </button>
       <button
-        class="text-gray-600 font-semibold px-4 py-2 hover:text-blue-700 focus:text-blue-700"
+        class="text-gray-600 font-semibold px-4 py-2 hover:text-sky-700 focus:text-blue-700"
       >
         Français
       </button>
       <button
-        class="text-gray-600 font-semibold px-4 py-2 hover:text-blue-700 focus:text-blue-700"
+        class="text-gray-600 font-semibold px-4 py-2 hover:text-sky-700 focus:text-blue-700"
       >
         Allemand
       </button>
       <button
-        class="text-gray-600 font-semibold px-4 py-2 hover:text-blue-700 focus:text-blue-700"
+        class="text-gray-600 font-semibold px-4 py-2 hover:text-sky-700 focus:text-blue-700"
       >
         Espagnol
       </button>
       <button
-        class="text-blue-700 font-semibold px-4 py-2 bg-yellow-300 rounded"
+        class="text-sky-700 font-semibold px-4 py-2 bg-yellow-300 rounded"
       >
         Maths
       </button>
       <button
-        class="text-gray-600 font-semibold px-4 py-2 hover:text-blue-700 focus:text-blue-700"
+        class="text-gray-600 font-semibold px-4 py-2 hover:text-sky-700 focus:text-blue-700"
       >
         SVT
       </button>
       <button
-        class="text-gray-600 font-semibold px-4 py-2 hover:text-blue-700 focus:text-blue-700"
+        class="text-gray-600 font-semibold px-4 py-2 hover:text-sky-700 focus:text-blue-700"
       >
         PCT
       </button>
       <button
-        class="text-gray-600 font-semibold px-4 py-2 hover:text-blue-700 focus:text-blue-700"
+        class="text-gray-600 font-semibold px-4 py-2 hover:text-sky-700 focus:text-blue-700"
       >
         EPS
       </button>
       <button
-        class="text-gray-600 font-semibold px-4 py-2 hover:text-blue-700 focus:text-blue-700"
+        class="text-gray-600 font-semibold px-4 py-2 hover:text-sky-700 focus:text-blue-700"
       >
         Hist-Géo
       </button>
       <button
-        class="text-gray-600 font-semibold px-4 py-2 hover:text-blue-700 focus:text-blue-700"
+        class="text-gray-600 font-semibold px-4 py-2 hover:text-sky-700 focus:text-blue-700"
       >
         PPLE
       </button>
     </nav>
 
     <!-- Warning Message -->
-    <div class="bg-yellow-100 text-yellow-800 p-2 text-sm text-center mt-2">
-      <i class="fas fa-exclamation-circle"></i>
+    <div class="p-2 flex items-center justify-center text-sm text-center mt-2">
+      <img src="../../assets/images/note/image1.png" alt="" />
+
       Si vous voyez le sigle <b>A/J</b> devant une note, cela signifie
       <b>absence justifiée</b>.
     </div>
 
     <!-- Table Section -->
     <section
-      class="bg-sky-700 w-[95%] mx-auto text-white p-4 mt-4 rounded-md shadow-lg"
+      class="bg-sky-700 w-[95%] mx-auto text-white p-4 mt-4 rounded-3xl shadow-lg"
     >
-      <div class="flex items-center mb-4">
+      <div class="flex items-center justify-center mb-4">
         <img
           src="../../assets/images/icons/notes.png"
           alt="Notes Icon"
@@ -469,7 +474,7 @@
       <div class="overflow-x-auto">
         <table class="table-auto border-collapse w-full text-center">
           <thead>
-            <tr class="bg-blue-800">
+            <tr class="bg-sky-700">
               <th class="py-2 px-4 border">Interro 1</th>
               <th class="py-2 px-4 border">Interro 2</th>
               <th class="py-2 px-4 border">Interro 3</th>
@@ -478,12 +483,12 @@
               <th class="py-2 px-4 border">Interro 6</th>
               <th class="py-2 px-4 border">Interro 7</th>
               <th class="py-2 px-4 border">Interro 8</th>
-              <th class="py-2 px-4 border bg-yellow-400 text-black">
+              <th class="py-2 px-4 border text-yellow-500 font-bold">
                 Moy. Interro
               </th>
             </tr>
           </thead>
-          <tbody class="bg-white text-black">
+          <tbody class="bg-sky-700 text-white">
             <tr>
               <td class="py-2 px-4 border">13</td>
               <td class="py-2 px-4 border">17,5</td>
@@ -493,11 +498,11 @@
               <td class="py-2 px-4 border">18</td>
               <td class="py-2 px-4 border">-</td>
               <td class="py-2 px-4 border">-</td>
-              <td class="py-2 px-4 border bg-yellow-400 text-black">15,00</td>
+              <td class="py-2 px-4 border text-yellow-500 font-bold">15,00</td>
             </tr>
           </tbody>
           <thead>
-            <tr class="bg-blue-800">
+            <tr class="bg-sky-700 text-white">
               <th class="py-2 px-4 border">Devoir 1</th>
               <th class="py-2 px-4 border">Devoir 2</th>
               <th class="py-2 px-4 border">Devoir 3</th>
@@ -506,12 +511,12 @@
               <th class="py-2 px-4 border">Devoir 6</th>
               <th class="py-2 px-4 border">Devoir 7</th>
               <th class="py-2 px-4 border">Devoir 8</th>
-              <th class="py-2 px-4 border bg-yellow-400 text-black">
+              <th class="py-2 px-4 border text-yellow-500 font-bold">
                 Moy. Générale
               </th>
             </tr>
           </thead>
-          <tbody class="bg-white text-black">
+          <tbody class="text-white bg-sky-700">
             <tr>
               <td class="py-2 px-4 border">12</td>
               <td class="py-2 px-4 border">00</td>
@@ -521,7 +526,7 @@
               <td class="py-2 px-4 border">13,5</td>
               <td class="py-2 px-4 border">-</td>
               <td class="py-2 px-4 border">-</td>
-              <td class="py-2 px-4 border bg-yellow-400 text-black">11,5</td>
+              <td class="py-2 px-4 border text-yellow-500 font-bold">11,5</td>
             </tr>
           </tbody>
         </table>
