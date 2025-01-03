@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>SuccèsSco</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <style>
+      /* Ajoute une animation pour afficher la modale */
+      #settings-modal.show {
+        display: flex;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="container-fluid bg-yellow-100"
+    style="font-family: 'Ubuntu', sans-serif"
+  >
+    <!-- Header Section -->
+    <header class="w-full py-2 bg-white pl-2 top-0 left-0 shadow-lg z-50">
+      <h3
+        class="text-black font-semibold text-md lg:text-2xl md:text-xl sm:text-md lg:font-semibold"
+      >
+        Tableau de bord
+      </h3>
+    </header>
+    <header class="w-full bg-sky-700 py-1 top-0 left-0 shadow-lg z-50">
+      <div class="w-full mx-auto flex items-center justify-between">
+        <img
+          src="../../assets/images/tableauDeBoard/navig4.png
+      "
+          class="w-5 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
+          alt=""
+          id="menu-btn"
+        />
+        <h3 class="text-sm lg:text-md text-center text-white font-bold">
+          SuccèsSco Benin
+        </h3>
+        <div class="flex flex-row">
+          <a href="">
+            <img
+              src="../../assets/images/tableauDeBoard/navig3.png
+            "
+              class="w-6 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
+              alt=""
+            />
+          </a>
+          <a href="../../menu/parent/Messages.html">
+            <img
+              src="../../assets/images/tableauDeBoard/navig5.png
+            "
+              class="w-6 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
+              alt=""
+            />
+          </a>
+          <a href="../../dashboard/parents/Notifications.html ">
+            <img
+              src="../../assets/images/tableauDeBoard/navig2.png
+          "
+              class="w-5 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
+              alt=""
+            />
+          </a>
+
+          <img
+            src="../../assets/images/tableauDeBoard/navig1.png
+        "
+            class="w-5 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
+            alt=""
+            id="setting-btn"
+          />
+        </div>
+      </div>
+    </header>
+    <img
+      src="../../assets/images/ecoleChoisie/bg.png"
+      class="items-center h-screen fixed -z-30 top-0 left-0 justify-items-center opacity-30"
+      alt=""
+    />
+
+    <!-- Fenêtre latérale -->
+    <div
+      id="sidebar"
+      class="absolute top-0 left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-40 rounded-2xl"
+    >
+      <div class="p-4">
+        <h3 class="text-lg font-bold mb-4">Menu</h3>
+        <ul class="space-y-4">
+          <!-- <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+            id="language-btn"
+          >
+            <a href="" class="w-full justify-between flex flex-row">
+              Langue
+              <img
+                src="../../assets/images/tableauDeBoard/button11.png"
+                alt=""
+                class="w-4"
+            /></a>
+          </li> -->
+
+          <!-- Menu déroulant pour la sélection de la langue -->
+          <li class="flex items-center hover:text-sky-700 cursor-pointer">
+            <select
+              id="language-select"
+              class="appearance-none bg-transparent border border-1 border-gray-100 p-2 rounded-2xl bg-gray-300 cursor-pointer"
+            >
+              <option value="">Choisissez votre langue</option>
+              <option value="fr">Français</option>
+              <option value="en">Anglais</option>
+              <option value="fon">Fon</option>
+              <option value="idaash">Idaasha</option>
+              <option value="mina">Mina</option>
+            </select>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a href="parent.html" class="w-full justify-between flex flex-row">
+              Tableau de bord
+              <img
+                src="../../assets/images/tableauDeBoard/button8.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a
+              href="../../menu/parent/Note.html"
+              class="w-full justify-between flex flex-row"
+            >
+              Notes
+              <img
+                src="../../assets/images/tableauDeBoard/button5.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a
+              href="../../menu/parent/Solde.html"
+              class="w-full justify-between flex flex-row"
+            >
+              Votre solde
+              <img
+                src="../../assets/images/tableauDeBoard/button6.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a
+              href="../../menu/parent/Absence.html"
+              class="w-full justify-between flex flex-row"
+            >
+              Absences
+              <img
+                src="../../assets/images/tableauDeBoard/button7.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a
+              href="../../menu/parent/ExerciceMaison.html"
+              class="w-full justify-between flex flex-row"
+            >
+              Exercices de maison
+              <img
+                src="../../assets/images/tableauDeBoard/button3.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a
+              href="../../menu/parent/Conduite.html"
+              class="w-full justify-between flex flex-row"
+            >
+              Conduite
+              <img
+                src="../../assets/images/tableauDeBoard/button4.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a
+              href=" ../../menu/parent/Messages.html"
+              class="w-full justify-between flex flex-row"
+            >
+              Messagerie
+              <img
+                src="../../assets/images/tableauDeBoard/button2.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a
+              href="../../menu/parent/Contact.html  "
+              class="w-full justify-between flex flex-row"
+            >
+              Contacts utiles
+              <img
+                src="../../assets/images/tableauDeBoard/button1.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a
+              href="../../menu/parent/NiveauProgramme.html"
+              class="w-full justify-between flex flex-row"
+            >
+              Niveau de programme
+              <img
+                src="../../assets/images/tableauDeBoard/button13.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a
+              href="../../menu/parent/RappelVaccination.html"
+              class="w-full justify-between flex flex-row"
+            >
+              Rappel de vaccination
+              <img
+                src="../../assets/images/tableauDeBoard/button12.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Inclure les icônes avec Heroicons -->
+    <script src="https://unpkg.com/@heroicons/vue@1.0.6/dist/outline/index.js"></script>
+
+    <!-- Fenêtre modale -->
+    <div
+      id="settings-modal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-sm">
+        <!-- Titre de la modale -->
+        <h2 class="text-lg font-bold mb-4 text-center">Paramètres</h2>
+
+        <!-- Bouton Voir le Profil -->
+        <button
+          id="profile-btn"
+          class="flex items-center w-full mb-3 px-4 py-2 rounded hover:bg-sky-200 transition"
+        >
+          <!-- Icône profil avec Font Awesome -->
+          <i class="fa-solid fa-user w-5 h-5 mr-3"></i>
+          Voir le Profil
+        </button>
+
+        <!-- Bouton Déconnexion -->
+        <button
+          id="logout-btn"
+          class="flex items-center w-full mb-3 px-4 py-2 rounded hover:bg-sky-200 transition"
+        >
+          <!-- Icône Déconnexion avec Font Awesome -->
+          <i class="fa-solid fa-right-from-bracket w-5 h-5 mr-3"></i>
+          Déconnexion
+        </button>
+
+        <!-- Bouton Fermer -->
+        <button
+          id="close-btn"
+          class="flex items-center w-full px-4 py-2 text-center rounded hover:bg-sky-200 transition"
+        >
+          <!-- Icône Fermer avec Font Awesome -->
+          <i class="fa-solid fa-xmark w-5 h-5 mr-3"></i>
+          Fermer
+        </button>
+      </div>
+    </div>
+
+    <header class="w-full bg-white py-1 top-0 left-0 shadow-lg z-50">
+      <div
+        class="m-full mx-auto flex flex-col lg:flex-row md:flex-row items-start justify-evenly py-2 px-auto"
+      >
+        <div
+          class="flex flex-row md:flex-row lg:flex-row items-center ml-4 lg:ml-0 md:ml-0 justify-between mb-2"
+        >
+          <img
+            src="../../assets/images/tableauDeBoard/image3.png"
+            class="w-4"
+            alt=""
+          />
+          <h3 class="mx-3 text-xs font-semibold">LENOIR Bonheur</h3>
+        </div>
+        <div
+          class="flex flex-row md:flex-row lg:flex-row items-center ml-4 lg:ml-0 md:ml-0 justify-between mb-2"
+        >
+          <img
+            src="../../assets/images/tableauDeBoard/image2.png"
+            class="w-4"
+            alt=""
+          />
+          <a href="">
+            <h3 class="mx-3 text-xs font-semibold text-sky-700">
+              Comptes et mot de passe >
+            </h3>
+          </a>
+        </div>
+        <div
+          class="flex flex-row md:flex-row lg:flex-row items-center ml-4 lg:ml-0 md:ml-0 justify-between mb-2"
+        >
+          <img
+            src="../../assets/images/tableauDeBoard/image1.png"
+            class="w-4"
+            alt=""
+          />
+          <h3 class="text-xs mx-3 font-semibold text-sky-700">
+            Validité forfait : 31/12/2024 a 13h:34mn
+          </h3>
+        </div>
+      </div>
+    </header>
+    <div class="flex flex-col lg:flex-row mt-4">
+      <div
+        class="flex flex-col w-[90%] mx-auto items-center justify-center lg:w-1/2"
+      >
+        <div class="w-full items-start">
+          <h3 class="text-center font-bold mt-0 text-md">Infos classe</h3>
+          <div
+            class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 w-full gap-2"
+          >
+            <div
+              class="items-center flex flex-row justify-between bg-yellow-500 rounded-3xl p-3"
+            >
+              <div class="flex flex-col items-center justify-center">
+                <img
+                  src="../../assets/images/tableauDeBoard/button10.png"
+                  class="w-[40px]"
+                  alt=""
+                />
+                <h3 class="font-semibold">Matière</h3>
+              </div>
+              <div class="rounded-full border border-sky-700 border-2 p-2">
+                <h3 class="font-black text-sky-700 text-4xl">19</h3>
+              </div>
+            </div>
+
+            <div
+              class="items-center flex flex-row justify-between bg-yellow-500 rounded-3xl p-3"
+            >
+              <div class="flex flex-col items-center justify-center">
+                <img
+                  src="../../assets/images/tableauDeBoard/button11.png"
+                  class="w-[40px]"
+                  alt=""
+                />
+                <h3 class="font-semibold">Effectif Classe</h3>
+              </div>
+              <div class="rounded-full border border-sky-700 border-2 p-2">
+                <h3 class="font-black text-sky-700 text-4xl">16</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full h-full flex flex-col mx-2">
+          <h3 class="text-center font-bold mt-0 text-md">Menu</h3>
+          <div class="flex flex-col lg:flex-row">
+            <div
+              class="w-full items-center justify-center flex-grow lg:mx-1 md:mx-1 mx-0"
+            >
+              <div
+                class="w-full flex flex-col gap-2 md:flex-row lg:flex-row my-1"
+              >
+                <a
+                  href="../../menu/parent/Solde.html"
+                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center md:p-3 lg:p-2 p-3 border-blue-400 rounded-2xl lg:mx-1 md:mx-1 mx-0 text-sky-800 font-semibold text-xs"
+                >
+                  <img
+                    class="w-5"
+                    src="../../assets/images/tableauDeBoard/button6.png"
+                    alt=""
+                  />
+                  Solde
+                </a>
+                <a
+                  href="../../menu/parent/Note.html"
+                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center md:p-3 lg:p-2 p-3 border-blue-400 rounded-2xl lg:mx-1 md:mx-1 mx-0 text-sky-800 font-semibold text-xs"
+                >
+                  <img
+                    class="w-5"
+                    src="../../assets/images/tableauDeBoard/button5.png"
+                    alt=""
+                  />
+                  Note
+                </a>
+              </div>
+              <div class="w-full flex flex-row my-1">
+                <a
+                  href="../../menu/parent/ExerciceMaison.html"
+                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center md:p-3 lg:p-2 p-3 border-blue-400 rounded-2xl mx-0 lg:mx-1 md:mx-1 text-sky-800 font-semibold text-xs"
+                >
+                  <img
+                    class="w-5"
+                    src="../../assets/images/tableauDeBoard/button3.png"
+                    alt=""
+                  />
+                  Exercice de maison
+                </a>
+              </div>
+              <div class="w-full flex flex-row my-1">
+                <a
+                  href="../../menu/parent/NiveauProgramme.html"
+                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center md:p-3 lg:p-2 p-3 border-blue-400 rounded-2xl mx-0 lg:mx-1 md:mx-1 text-sky-800 font-semibold text-xs"
+                >
+                  <img
+                    class="w-5"
+                    src="../../assets/images/tableauDeBoard/button13.png"
+                    alt=""
+                  />
+                  Niveau Programme
+                </a>
+              </div>
+            </div>
+            <div class="w-full flex-grow lg:mx-1 md:mx-1 mx-0">
+              <div
+                class="w-full flex flex-col gap-2 md:flex-row lg:flex-row my-1"
+              >
+                <a
+                  href="../../menu/parent/Absence.html"
+                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center md:p-3 lg:p-2 p-3 border-blue-400 rounded-2xl lg:mx-1 md:mx-1 mx-0 text-sky-800 font-semibold text-xs"
+                >
+                  <img
+                    class="w-5"
+                    src="../../assets/images/tableauDeBoard/button7.png"
+                    alt=""
+                  />
+                  Absence
+                </a>
+                <a
+                  href="../../menu/parent/Conduite.html"
+                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center md:p-3 lg:p-2 p-3 border-blue-400 rounded-2xl lg:mx-1 md:mx-1 mx-0 text-sky-800 font-semibold text-xs"
+                >
+                  <img
+                    class="w-[14px]"
+                    src="../../assets/images/tableauDeBoard/button4.png"
+                    alt=""
+                  />
+                  Conduite
+                </a>
+              </div>
+              <div
+                class="w-full flex flex-col gap-2 md:flex-row lg:flex-row my-1"
+              >
+                <a
+                  href="../../menu/parent/Messagerie.html"
+                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center md:p-3 lg:p-2 p-3 border-blue-400 rounded-2xl lg:mx-1 md:mx-1 mx-0 text-sky-800 font-semibold text-xs"
+                >
+                  <img
+                    class="w-5"
+                    src="../../assets/images/tableauDeBoard/button2.png"
+                    alt=""
+                  />
+                  Messagerie
+                </a>
+                <a
+                  href="../../menu/parent/Contact.html"
+                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center md:p-3 lg:p-2 p-3 border-blue-400 rounded-2xl lg:mx-1 md:mx-1 mx-0 text-sky-800 font-semibold text-xs"
+                >
+                  <img
+                    class="w-4"
+                    src="../../assets/images/tableauDeBoard/button1.png"
+                    alt=""
+                  />
+                  Contact
+                </a>
+              </div>
+              <div class="w-full flex flex-row my-1">
+                <a
+                  href="../../menu/parent/RappelVaccination.html"
+                  class="w-full border hover:bg-sky-300 duration-150 flex flex-row justify-evenly bg-white shadow shadow-md items-center md:p-3 lg:p-2 py-3 border-blue-400 rounded-2xl lg:mx-1 md:mx-1 mx-0 text-sky-800 font-semibold text-xs"
+                >
+                  <img
+                    class="w-5"
+                    src="../../assets/images/tableauDeBoard/button12.png"
+                    alt=""
+                  />
+                  Rappel Vaccination
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="lg:w-1/2 w-11/12 mx-auto items-center justify-center flex flex-col lg:flex-row h-auto"
+      >
+        <div class="w-full h-4/5 mx-2">
+          <div
+            class="flex flex-col items-center bg-white p-4 shadow shadow-lg rounded-2xl justify-center h-full"
+          >
+            <h3 class="text-center font-bold mb-2 text-xl">
+              STATISTIQUES GRAPHIQUES
+            </h3>
+            <iframe
+              class="w-full h-full rounded-lg"
+              src="https://www.youtube.com/embed/47INzI-xgHM"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="flex flex-col items-center justify-center mx-auto my-4 p-4 rounded-lg"
+    >
+      <h3 class="font-bold text-xl mb-2 text-black">Nos partenaires</h3>
+      <div class="flex flex-wrap justify-center items-center gap-4">
+        <img
+          src="../../assets/images/tableauDeBoard/partenaire5.png"
+          class="w-8 md:w-10 lg:w-16 object-contain rounded"
+          alt="Partenaire 2"
+        />
+        <img
+          src="../../assets/images/tableauDeBoard/partenaire4.png"
+          class="w-8 md:w-10 lg:w-16 object-contain rounded"
+          alt="Partenaire 3"
+        />
+        <img
+          src="../../assets/images/tableauDeBoard/partenaire6.png"
+          class="w-8 md:w-10 lg:w-16 object-cover rounded"
+          alt="Partenaire 5"
+        />
+        <img
+          src="../../assets/images/tableauDeBoard/partenaire2.png"
+          class="w-8 md:w-10 lg:w-16 object-contain rounded"
+          alt="Partenaire 4"
+        />
+        <img
+          src="../../assets/images/tableauDeBoard/partenaire1.png"
+          class="w-8 md:w-10 lg:w-16 object-contain rounded"
+          alt="Partenaire 1"
+        />
+        <img
+          src="../../assets/images/tableauDeBoard/partenaire3.png"
+          class="w-24 md:w-10 lg:w-16 object-contain rounded"
+          alt="Partenaire 5"
+        />
+      </div>
+    </div>
+
+    <!-- <div
+      class="flex flex-col gap-4 max-w-sm mx-auto sm:max-w-md lg:max-w-lg my-8"
+    ></div> -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.getElementById("sidebar");
+
+      // Toggle sidebar visibility
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("-translate-x-full");
+        document.body.classList.toggle("overlay-active"); // Add class to detect if the overlay should be active
+      });
+
+      // Close sidebar when clicking outside
+      document.addEventListener("click", (event) => {
+        if (
+          !sidebar.contains(event.target) && // Click is outside the sidebar
+          !menuBtn.contains(event.target) && // Click is not on the button
+          !sidebar.classList.contains("-translate-x-full") // Sidebar is open
+        ) {
+          sidebar.classList.add("-translate-x-full");
+          document.body.classList.remove("overlay-active");
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const settingBtn = document.getElementById("setting-btn");
+        const settingsModal = document.getElementById("settings-modal");
+        const closeBtn = document.getElementById("close-btn");
+
+        // Ouvrir la fenêtre modale
+        settingBtn.addEventListener("click", () => {
+          settingsModal.classList.remove("hidden");
+          settingsModal.classList.add("show");
+        });
+
+        // Fermer la fenêtre modale
+        closeBtn.addEventListener("click", () => {
+          settingsModal.classList.add("hidden");
+          settingsModal.classList.remove("show");
+        });
+
+        // Fermer la modale en cliquant en dehors de son contenu
+        settingsModal.addEventListener("click", (event) => {
+          if (event.target === settingsModal) {
+            settingsModal.classList.add("hidden");
+            settingsModal.classList.remove("show");
+          }
+        });
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        const languageBtn = document.getElementById("language-btn");
+        const languageModal = document.getElementById("language-modal");
+        const closeLanguageBtn = document.getElementById("close-language-btn");
+        const frenchBtn = document.getElementById("french-btn");
+        const englishBtn = document.getElementById("english-btn");
+
+        // Ouvrir la fenêtre modale
+        languageBtn.addEventListener("click", (e) => {
+          e.preventDefault(); // Empêche le rechargement de la page
+          languageModal.classList.remove("hidden");
+          languageModal.classList.add("show");
+        });
+
+        // Fermer la fenêtre modale
+        closeLanguageBtn.addEventListener("click", () => {
+          languageModal.classList.add("hidden");
+          languageModal.classList.remove("show");
+        });
+
+        // Actions pour les boutons de langue
+        frenchBtn.addEventListener("click", () => {
+          alert("Langue sélectionnée : Français");
+          // Ajoutez ici votre logique pour appliquer le français
+        });
+
+        englishBtn.addEventListener("click", () => {
+          alert("Langue sélectionnée : Anglais");
+          // Ajoutez ici votre logique pour appliquer l'anglais
+        });
+
+        // Fermer la modale en cliquant en dehors de son contenu
+        languageModal.addEventListener("click", (event) => {
+          if (event.target === languageModal) {
+            languageModal.classList.add("hidden");
+            languageModal.classList.remove("show");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

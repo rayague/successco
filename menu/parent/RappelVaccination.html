@@ -43,33 +43,42 @@
       </h3>
     </header>
     <header class="w-full bg-sky-700 py-1 top-0 left-0 shadow-lg z-50">
-      <div class="max-w-7xl mx-auto flex items-center justify-between px-4">
-        <!-- <i class="fa fa-bars text-white/50 cursor-pointer"></i> -->
+      <div class="w-full mx-auto flex items-center justify-between">
         <img
           src="../../assets/images/tableauDeBoard/navig4.png
       "
-          class="w-5 mx-3 cursor-pointer"
+          class="w-5 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
           alt=""
           id="menu-btn"
         />
-        <h3 class="text-md text-white font-bold">SuccesSco Benin</h3>
+        <h3 class="text-sm lg:text-md text-center text-white font-bold">
+          SuccesSco Benin
+        </h3>
         <div class="flex flex-row">
           <img
             src="../../assets/images/tableauDeBoard/navig3.png
           "
-            class="w-6 mx-3 cursor-pointer"
+            class="w-6 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
             alt=""
           />
+          <a href="">
+            <img
+              src="../../assets/images/tableauDeBoard/navig5.png
+            "
+              class="w-6 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
+              alt=""
+            />
+          </a>
           <img
             src="../../assets/images/tableauDeBoard/navig2.png
         "
-            class="w-5 mx-3 cursor-pointer"
+            class="w-5 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
             alt=""
           />
           <img
             src="../../assets/images/tableauDeBoard/navig1.png
       "
-            class="w-5 mx-3 cursor-pointer"
+            class="w-5 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
             alt=""
             id="setting-btn"
           />
@@ -371,30 +380,59 @@
           />
           <h3 class="mx-3 text-sm font-semibold">LENOIR Bonheur</h3>
         </div>
-        <div class="flex flex-col md:flex-col lg:flex-row items-center">
-          <img
-            src="../../assets/images/tableauDeBoard/image2.png"
-            class="w-4"
-            alt=""
-          />
-          <a href="">
-            <h3 class="mx-3 text-sm font-semibold text-sky-700">
-              Comptes et mot de passe >
-            </h3>
-          </a>
-        </div>
-        <div class="flex flex-col md:flex-col lg:flex-row items-center">
-          <img
-            src="../../assets/images/tableauDeBoard/image1.png"
-            class="w-4"
-            alt=""
-          />
-          <h3 class="mx-3 text-sm font-semibold text-sky-700">
-            Validite forfait : 31/12/2024 a 13h:34mn
-          </h3>
-        </div>
       </div>
     </header>
+
+    <div
+      class="w-full flex flex lg:flex-row md:flex-row flex-col font-bold text-2xl items-center justify-center my-4"
+    >
+      <img
+        src="../../assets/images/menu/punition.png"
+        class="w-24 mx-3"
+        alt=""
+      />
+      <h3
+        class="mx-3 text-xl text-center lg:text-3xl md:text-2xl font-bold text-sky-700"
+      >
+        Rappel de Vaccination de votre enfant LENOIR Bonheur
+      </h3>
+    </div>
+    <p
+      class="mx-3 text-sm text-center lg:text-md md:text-md font-light text-black my-4"
+    >
+      Votre enfant a présentement 6 ans. Veuillez lui faire les vaccins
+      suivants.
+    </p>
+
+    <!-- Tableau -->
+    <div class="overflow-x-auto w-[95%] mx-auto rounded-2xl">
+      <table class="table-auto w-full border-collapse border border-yellow-300">
+        <!-- En-tête -->
+        <thead class="bg-sky-700 text-white">
+          <tr>
+            <th class="px-4 py-4">Dernier rappel : 27/07/2024</th>
+            <th class="px-4 py-4"></th>
+          </tr>
+          <tr>
+            <th class="px-4 py-4 border border-yellow-300">N</th>
+            <th class="px-4 py-4 border border-yellow-300">Type de vaccin</th>
+          </tr>
+        </thead>
+        <!-- Corps du Tableau -->
+        <tbody>
+          <!-- Ligne 1 -->
+          <tr class="bg-white">
+            <td
+              class="px-4 py-2 border border-yellow-300 text-red-500 text-center font-semibold"
+            ></td>
+            <td
+              class="px-4 py-4 flex flex-row border border-yellow-300 text-center font-bold text-red-500"
+            ></td>
+          </tr>
+        </tbody>
+        <!-- Pied de Tableau -->
+      </table>
+    </div>
 
     <script>
       const menuBtn = document.getElementById("menu-btn");

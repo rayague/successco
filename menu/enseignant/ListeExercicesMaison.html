@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>SuccèsSco</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <style>
+      /* Ajoute une animation pour afficher la modale */
+      #settings-modal.show {
+        display: flex;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="container-fluid bg-yellow-100"
+    style="font-family: 'Ubuntu', sans-serif"
+  >
+    <!-- Header Section -->
+    <header class="w-full py-2 bg-white pl-2 top-0 left-0 shadow-lg z-50">
+      <h3
+        class="text-black font-semibold text-md lg:text-2xl md:text-xl sm:text-md lg:font-semibold"
+      >
+        Liste des exercices de maison
+      </h3>
+    </header>
+    <header class="w-full bg-sky-700 py-1 top-0 left-0 shadow-lg z-50">
+      <div class="w-full mx-auto flex items-center justify-between">
+        <img
+          src="../../assets/images/tableauDeBoard/navig4.png
+      "
+          class="w-5 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
+          alt=""
+          id="menu-btn"
+        />
+        <h3 class="text-sm lg:text-md text-center text-white font-bold">
+          SuccèsSco Benin
+        </h3>
+        <div class="flex flex-row">
+          <a href="">
+            <img
+              src="../../assets/images/tableauDeBoard/navig3.png
+            "
+              class="w-6 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
+              alt=""
+            />
+          </a>
+          <a href="../../menu/parent/Messages.html">
+            <img
+              src="../../assets/images/tableauDeBoard/navig5.png
+            "
+              class="w-6 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
+              alt=""
+            />
+          </a>
+          <a href="../../dashboard/parents/Notifications.html ">
+            <img
+              src="../../assets/images/tableauDeBoard/navig2.png
+          "
+              class="w-5 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
+              alt=""
+            />
+          </a>
+
+          <img
+            src="../../assets/images/tableauDeBoard/navig1.png
+        "
+            class="w-5 mx-1 lg:mx-3 md:mx-2 cursor-pointer"
+            alt=""
+            id="setting-btn"
+          />
+        </div>
+      </div>
+    </header>
+    <img
+      src="../../assets/images/ecoleChoisie/bg.png"
+      class="items-center h-screen fixed -z-30 top-0 left-0 justify-items-center opacity-30"
+      alt=""
+    />
+
+    <!-- Fenêtre latérale -->
+    <div
+      id="sidebar"
+      class="absolute top-0 left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-40 rounded-2xl"
+    >
+      <div class="p-4">
+        <h3 class="text-lg font-bold mb-4">Menu</h3>
+        <ul class="space-y-4">
+          <!-- <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+            id="language-btn"
+          >
+            <a href="" class="w-full justify-between flex flex-row">
+              Langue
+              <img
+                src="../../assets/images/tableauDeBoard/button11.png"
+                alt=""
+                class="w-4"
+            /></a>
+          </li> -->
+
+          <!-- Menu déroulant pour la sélection de la langue -->
+          <li class="flex items-center hover:text-sky-700 cursor-pointer">
+            <select
+              id="language-select"
+              class="appearance-none bg-transparent border border-1 border-gray-100 p-2 rounded-2xl bg-gray-300 cursor-pointer"
+            >
+              <option value="">Choisissez votre langue</option>
+              <option value="fr">Français</option>
+              <option value="en">Anglais</option>
+              <option value="fon">Fon</option>
+              <option value="idaash">Idaasha</option>
+              <option value="mina">Mina</option>
+            </select>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a href="parent.html" class="w-full justify-between flex flex-row">
+              Tableau de bord
+              <img
+                src="../../assets/images/tableauDeBoard/button8.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a
+              href="../../menu/parent/Note.html"
+              class="w-full justify-between flex flex-row"
+            >
+              Notes
+              <img
+                src="../../assets/images/tableauDeBoard/button5.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a
+              href="../../menu/parent/Solde.html"
+              class="w-full justify-between flex flex-row"
+            >
+              Votre solde
+              <img
+                src="../../assets/images/tableauDeBoard/button6.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a
+              href="../../menu/parent/Absence.html"
+              class="w-full justify-between flex flex-row"
+            >
+              Absences
+              <img
+                src="../../assets/images/tableauDeBoard/button7.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a
+              href="../../menu/parent/ExerciceMaison.html"
+              class="w-full justify-between flex flex-row"
+            >
+              Exercices de maison
+              <img
+                src="../../assets/images/tableauDeBoard/button3.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a
+              href="../../menu/parent/Conduite.html"
+              class="w-full justify-between flex flex-row"
+            >
+              Conduite
+              <img
+                src="../../assets/images/tableauDeBoard/button4.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a
+              href=" ../../menu/parent/Messages.html"
+              class="w-full justify-between flex flex-row"
+            >
+              Messagerie
+              <img
+                src="../../assets/images/tableauDeBoard/button2.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a
+              href="../../menu/parent/Contact.html  "
+              class="w-full justify-between flex flex-row"
+            >
+              Contacts utiles
+              <img
+                src="../../assets/images/tableauDeBoard/button1.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a
+              href="../../menu/parent/NiveauProgramme.html"
+              class="w-full justify-between flex flex-row"
+            >
+              Niveau de programme
+              <img
+                src="../../assets/images/tableauDeBoard/button13.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+
+          <li
+            class="flex items-center font-semibold hover:text-sky-700 cursor-pointer"
+          >
+            <a
+              href="../../menu/parent/RappelVaccination.html"
+              class="w-full justify-between flex flex-row"
+            >
+              Rappel de vaccination
+              <img
+                src="../../assets/images/tableauDeBoard/button12.png"
+                alt=""
+                class="w-4"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Inclure les icônes avec Heroicons -->
+    <script src="https://unpkg.com/@heroicons/vue@1.0.6/dist/outline/index.js"></script>
+
+    <!-- Fenêtre modale -->
+    <div
+      id="settings-modal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-sm">
+        <!-- Titre de la modale -->
+        <h2 class="text-lg font-bold mb-4 text-center">Paramètres</h2>
+
+        <!-- Bouton Voir le Profil -->
+        <button
+          id="profile-btn"
+          class="flex items-center w-full mb-3 px-4 py-2 rounded hover:bg-sky-200 transition"
+        >
+          <!-- Icône profil avec Font Awesome -->
+          <i class="fa-solid fa-user w-5 h-5 mr-3"></i>
+          Voir le Profil
+        </button>
+
+        <!-- Bouton Déconnexion -->
+        <button
+          id="logout-btn"
+          class="flex items-center w-full mb-3 px-4 py-2 rounded hover:bg-sky-200 transition"
+        >
+          <!-- Icône Déconnexion avec Font Awesome -->
+          <i class="fa-solid fa-right-from-bracket w-5 h-5 mr-3"></i>
+          Déconnexion
+        </button>
+
+        <!-- Bouton Fermer -->
+        <button
+          id="close-btn"
+          class="flex items-center w-full px-4 py-2 text-center rounded hover:bg-sky-200 transition"
+        >
+          <!-- Icône Fermer avec Font Awesome -->
+          <i class="fa-solid fa-xmark w-5 h-5 mr-3"></i>
+          Fermer
+        </button>
+      </div>
+    </div>
+
+    <header class="w-full bg-white py-1 top-0 left-0 shadow-lg z-50">
+      <div class="flex flex-row md:flex-row lg:flex-row items-start m-2">
+        <img
+          src="../../assets/images/tableauDeBoard/image3.png"
+          class="w-8"
+          alt=""
+        />
+        <h3 class="mx-3 text-xl text-start font-semibold">
+          Ens. Dominique AKAKPO
+        </h3>
+      </div>
+    </header>
+
+    <div
+      class="w-full flex flex-col lg:flex-row md:flex-row gap-4 items-center justify-center my-5"
+    >
+      <img
+        src="../../assets/images/menu/absence.png"
+        alt=""
+        class="w-16 h-16"
+      />
+      <h3
+        class="text-center lg:text-3xl md:text-xl sm:text-xl text-xl font-bold text-sky-700"
+      >
+        Liste des exercices de maison
+      </h3>
+    </div>
+
+    <!-- Tableau -->
+    <div class="overflow-x-auto w-[95%] mx-auto rounded-2xl">
+      <table class="table-auto w-full border-collapse border border-blue-200">
+        <!-- En-tête -->
+        <thead class="bg-sky-700 text-white">
+          <tr>
+            <th class="px-4 py-4 border border-yellow-300">
+              Date de l'exercice
+            </th>
+            <th class="px-4 py-4 border border-yellow-300">Date de remise</th>
+            <th class="px-4 py-4 border border-yellow-300">
+              Détails de l'exercice
+            </th>
+            <th class="px-4 py-4 border border-yellow-300">Pièces Jointes</th>
+          </tr>
+        </thead>
+        <!-- Corps du Tableau -->
+        <tbody>
+          <!-- Ligne 1 -->
+          <tr class="bg-white">
+            <td class="px-4 py-2 border border-yellow-300 text-center">
+              <span class="bg-red-600 font-bold p-2 rounded-md text-white">
+                15/11/2024
+              </span>
+            </td>
+            <td class="px-4 py-4 border border-yellow-300 text-center">
+              <span class="bg-red-600 font-bold p-2 rounded-md text-white">
+                15/11/2024
+              </span>
+            </td>
+            <td class="px-4 py-4 border border-yellow-300 text-center">
+              <span class="bg-red-600 font-bold p-2 rounded-md text-white">
+                Ciam Exo 12 page 32
+              </span>
+            </td>
+            <td class="px-4 py-4 border border-yellow-300 text-center"></td>
+          </tr>
+          <!-- Ligne 2 -->
+          <tr class="bg-white">
+            <td class="px-4 py-4 border border-yellow-300 text-center"></td>
+            <td class="px-4 py-4 border border-yellow-300 text-center"></td>
+            <td class="px-4 py-4 border border-yellow-300 text-center"></td>
+            <td class="px-4 py-4 border border-yellow-300 text-center"></td>
+          </tr>
+          <!-- Ligne 3 -->
+          <tr class="bg-white">
+            <td class="px-4 py-4 border border-yellow-300 text-center"></td>
+            <td class="px-4 py-4 border border-yellow-300 text-center"></td>
+            <td class="px-4 py-4 border border-yellow-300 text-center"></td>
+            <td class="px-4 py-4 border border-yellow-300 text-center"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.getElementById("sidebar");
+
+      // Toggle sidebar visibility
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("-translate-x-full");
+        document.body.classList.toggle("overlay-active"); // Add class to detect if the overlay should be active
+      });
+
+      // Close sidebar when clicking outside
+      document.addEventListener("click", (event) => {
+        if (
+          !sidebar.contains(event.target) && // Click is outside the sidebar
+          !menuBtn.contains(event.target) && // Click is not on the button
+          !sidebar.classList.contains("-translate-x-full") // Sidebar is open
+        ) {
+          sidebar.classList.add("-translate-x-full");
+          document.body.classList.remove("overlay-active");
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const settingBtn = document.getElementById("setting-btn");
+        const settingsModal = document.getElementById("settings-modal");
+        const closeBtn = document.getElementById("close-btn");
+
+        // Ouvrir la fenêtre modale
+        settingBtn.addEventListener("click", () => {
+          settingsModal.classList.remove("hidden");
+          settingsModal.classList.add("show");
+        });
+
+        // Fermer la fenêtre modale
+        closeBtn.addEventListener("click", () => {
+          settingsModal.classList.add("hidden");
+          settingsModal.classList.remove("show");
+        });
+
+        // Fermer la modale en cliquant en dehors de son contenu
+        settingsModal.addEventListener("click", (event) => {
+          if (event.target === settingsModal) {
+            settingsModal.classList.add("hidden");
+            settingsModal.classList.remove("show");
+          }
+        });
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        const languageBtn = document.getElementById("language-btn");
+        const languageModal = document.getElementById("language-modal");
+        const closeLanguageBtn = document.getElementById("close-language-btn");
+        const frenchBtn = document.getElementById("french-btn");
+        const englishBtn = document.getElementById("english-btn");
+
+        // Ouvrir la fenêtre modale
+        languageBtn.addEventListener("click", (e) => {
+          e.preventDefault(); // Empêche le rechargement de la page
+          languageModal.classList.remove("hidden");
+          languageModal.classList.add("show");
+        });
+
+        // Fermer la fenêtre modale
+        closeLanguageBtn.addEventListener("click", () => {
+          languageModal.classList.add("hidden");
+          languageModal.classList.remove("show");
+        });
+
+        // Actions pour les boutons de langue
+        frenchBtn.addEventListener("click", () => {
+          alert("Langue sélectionnée : Français");
+          // Ajoutez ici votre logique pour appliquer le français
+        });
+
+        englishBtn.addEventListener("click", () => {
+          alert("Langue sélectionnée : Anglais");
+          // Ajoutez ici votre logique pour appliquer l'anglais
+        });
+
+        // Fermer la modale en cliquant en dehors de son contenu
+        languageModal.addEventListener("click", (event) => {
+          if (event.target === languageModal) {
+            languageModal.classList.add("hidden");
+            languageModal.classList.remove("show");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
